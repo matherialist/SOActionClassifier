@@ -7,8 +7,8 @@ from src.JointBertModel import JointBertModel, BERTVectorizer, TagsVectorizer
 
 class ActionClassifier:
 
-    def __init__(self, load_folder_path):
-        self.sess = sess = tf.compat.v1.Session()
+    def __init__(self, load_folder_path, sess):
+        self.sess = tf.compat.v1.Session()
         self.bert_vectorizer = BERTVectorizer(sess)
         self.tags_vectorizer = TagsVectorizer()
         self.intents_label_encoder = LabelEncoder()
@@ -18,20 +18,10 @@ class ActionClassifier:
             self.intents_label_encoder = pickle.load(handle)
         self.model = JointBertModel.load(load_folder_path, sess)
 
-    def run(self):
-        text = None
-        while text != "q":
-            text = input("New message: ")
-            if text != "q":
-                result = self.__predict(text)
-                print('Intent: ', result['intent']['name'])
-                print('Confidence: ', result['intent']['confidence'])
-                if len(result['slots']) > 0:
-                    print('Slots:')
-                    for slot in result['slots']:
-                        print(' ', slot['slot'], '=', slot['value'])
-                else:
-                    print('Slots:\n', ' None')
+    def make_prediction(self, utterance):
+        intent_slots = self.__predict(utterance)
+        response = "i'm fine"
+        return {"intent": intent_slots, "response": response}
 
     def __predict(self, utterance):
         tokens = utterance.split()
