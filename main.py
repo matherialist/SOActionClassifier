@@ -12,6 +12,7 @@ config_path = path.join(path.dirname(__file__), config_relative_path)
 graph = tf.compat.v1.get_default_graph()
 sess = tf.compat.v1.Session()
 tf.compat.v1.keras.backend.set_session(sess)
+ac = ActionClassifier(config_path, sess)
 
 
 @app.route('/get-intent', methods=['POST'])
@@ -24,5 +25,4 @@ def get_intent():
 
 
 if __name__ == '__main__':
-    ac = ActionClassifier(config_path, sess)
     app.run(host="0.0.0.0", port=5000)
