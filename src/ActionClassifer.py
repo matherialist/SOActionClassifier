@@ -20,8 +20,21 @@ class ActionClassifier:
 
     def make_prediction(self, utterance):
         intent_slots = self.__predict(utterance)
-        response = "i'm fine"
+        response = self.__construct_phrase(intent_slots)
         return {"intent": intent_slots, "response": response}
+
+    def __construct_phrase(self, intent_slots):
+        res = 'roger, i will '
+        words = {}
+        for slot in intent_slots['slots']:
+            words[slot['name']] = slot['value']
+        res += words['action']
+        res += ' the ' + words['object']
+        try:
+            res += ' to ' + words['state'] + ' degrees'
+        except KeyError:
+            pass
+        return res
 
     def __predict(self, utterance):
         tokens = utterance.split()
@@ -32,7 +45,7 @@ class ActionClassifier:
             self.tags_vectorizer, self.intents_label_encoder, remove_start_end=True,
             include_intent_prob=True)
         slots = self.__fill_slots(predicted_tags[0])
-        slots = [{"slot": name, "value": ' '.join([tokens[i] for i in slots[name]])} for name in slots.keys()]
+        slots = [{"name": name, "value": ' '.join([tokens[i] for i in slots[name]])} for name in slots.keys()]
         predictions = {
             "intent": {
                 "name": predicted_intents[0][0].strip(),
