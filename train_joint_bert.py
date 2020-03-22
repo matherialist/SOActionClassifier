@@ -1,9 +1,7 @@
-from goo_format_reader import Reader
 from src.JointBertModel import BERTVectorizer
 from src.JointBertModel import TagsVectorizer
 from src.JointBertModel import JointBertModel
 import matplotlib.pyplot as plt
-import argparse
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import os
@@ -14,19 +12,24 @@ from plot_keras_history import plot_history
 from tensorflow.keras.callbacks import ModelCheckpoint
 
 
-# read command-line parameters
-parser = argparse.ArgumentParser('Training the Joint BERT NLU model')
-parser.add_argument('--train', '-t', help='Path to training data in Goo et al format', type=str, required=True)
-parser.add_argument('--save', '-s', help='Folder path to save the trained model', type=str, required=True)
-parser.add_argument('--epochs', '-e', help='Number of epochs', type=int, default=5, required=False)
-parser.add_argument('--batch', '-bs', help='Batch size', type=int, default=64, required=False)
+def read_goo(dataset_folder_path):
+    with open(os.path.join(dataset_folder_path, 'label'), encoding='utf-8') as f:
+        labels = f.readlines()
 
-args = parser.parse_args()
-data_folder_path = args.train
-save_folder_path = args.save
-epochs = args.epochs
-batch_size = args.batch
+    with open(os.path.join(dataset_folder_path, 'seq.in'), encoding='utf-8') as f:
+        text_arr = f.readlines()
 
+    with open(os.path.join(dataset_folder_path, 'seq.out'), encoding='utf-8') as f:
+        tags_arr = f.readlines()
+
+    assert len(text_arr) == len(tags_arr) == len(labels)
+    return text_arr, tags_arr, labels
+
+
+data_folder_path = 'data/SH/train'
+save_folder_path = 'files'
+epochs = 1
+batch_size = 256
 
 tf.compat.v1.random.set_random_seed(7)
 sess = tf.compat.v1.Session()
@@ -35,7 +38,7 @@ sess = tf.compat.v1.Session()
 bert_model_hub_path = 'https://tfhub.dev/google/albert_base/1'
 
 print('read data ...')
-text_arr, tags_arr, intents = Reader.read(data_folder_path)
+text_arr, tags_arr, intents = read_goo(data_folder_path)
 
 model = None
 
@@ -47,6 +50,7 @@ input_ids, input_mask, segment_ids, valid_positions, sequence_lengths = bert_vec
 print('vectorize tags ...')
 tags_vectorizer = TagsVectorizer()
 tags_vectorizer.fit(tags_arr)
+
 tags = tags_vectorizer.transform(tags_arr, valid_positions)
 slots_num = len(tags_vectorizer.label_encoder.classes_)
 

@@ -1,8 +1,5 @@
-from goo_format_reader import Reader
 from src.JointBertModel import BERTVectorizer
 from src.JointBertModel import JointBertModel
-
-import argparse
 import os
 import pickle
 import tensorflow as tf
@@ -14,17 +11,22 @@ def flatten(y):
     return list(chain.from_iterable(y))
 
 
-# read command-line parameters
-parser = argparse.ArgumentParser('Evaluating the Joint BERT / ALBERT NLU model')
-parser.add_argument('--model', '-m', help='Path to joint BERT / ALBERT NLU model', type=str, required=True)
-parser.add_argument('--data', '-d', help='Path to data in Goo et al format', type=str, required=True)
-parser.add_argument('--batch', '-bs', help='Batch size', type=int, default=128, required=False)
+def read_goo(dataset_folder_path):
+    with open(os.path.join(dataset_folder_path, 'label'), encoding='utf-8') as f:
+        labels = f.readlines()
 
+    with open(os.path.join(dataset_folder_path, 'seq.in'), encoding='utf-8') as f:
+        text_arr = f.readlines()
 
-args = parser.parse_args()
-load_folder_path = args.model
-data_folder_path = args.data
-batch_size = args.batch
+    with open(os.path.join(dataset_folder_path, 'seq.out'), encoding='utf-8') as f:
+        tags_arr = f.readlines()
+
+    assert len(text_arr) == len(tags_arr) == len(labels)
+    return text_arr, tags_arr, labels
+
+load_folder_path = 'files'
+data_folder_path = 'data/SH/test'
+batch_size = 128
 
 
 sess = tf.compat.v1.Session()
@@ -49,7 +51,7 @@ with open(os.path.join(load_folder_path, 'intents_label_encoder.pkl'), 'rb') as 
 model = JointBertModel.load(load_folder_path, sess)
 
 
-data_text_arr, data_tags_arr, data_intents = Reader.read(data_folder_path)
+data_text_arr, data_tags_arr, data_intents = read_goo(data_folder_path)
 data_input_ids, data_input_mask, data_segment_ids, data_valid_positions, data_sequence_lengths = bert_vectorizer.transform(data_text_arr)
 
 
