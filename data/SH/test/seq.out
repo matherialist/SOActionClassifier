@@ -1,500 +1,1725 @@
-B-action B-object O O
-O O B-action B-object B-state O
-O O B-action B-state B-object O
-B-action B-object B-state O
-O B-action O B-object
-O O B-action O B-object
-O O O O O O
-O O B-action B-state O B-object O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O B-action.SET B-parameter B-temperature
+B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O B-action.SET O B-object O B-color I-object
+O O O O O B-parameter.CO2 O O O
+B-action.SWITCH_ON O B-object O I-action.SWITCH_ON O
+O O B-action.SET O B-object I-object B-brightness.VALUE I-object
+O O B-action.SWITCH_OFF O B-object O
 O O O O
-B-action B-object B-state O
-O O O B-action O B-object
-B-action B-object B-state
-O O B-action B-state B-object O
-B-action B-state B-object
-O O B-action O B-object O O
-B-action B-object B-state
-O O B-action B-state B-object O
-O O O O O
-O O O O O
-O O O O O
-O O O
-O O B-action B-object B-state O
-B-action O B-object O
-B-action B-state O B-object
-O O O O O O
-O O O
-O O O B-action B-object B-state
+O O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET B-object B-parameter B-temperature O O
+O O B-action.SWITCH_OFF B-object
+O O O O O O B-parameter.TEMPERATURE O O
+O O B-action.SWITCH_ON B-object O
+B-action.SET O B-object I-object O B-color O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET O B-object B-color
+O O O O O O O O B-parameter.CO2 O
+O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL O
+O O O O
+O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.CLOSE B-object O
+O B-action.SET B-object I-object B-brightness.VALUE O
+O O O O B-parameter.CO2 O O O
 O O O O O O O O
+O O B-action.SET O B-object O B-color
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O B-action.SET B-object I-object O B-color O
+B-action.OPEN O B-object O
+O O O O O O O O
+O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O O O
+O O O O B-parameter.CO2 O O
+O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE O
+O O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object I-object O B-color
+O O O O O O O B-parameter.CO2 O O O O
+O O B-action.SWITCH_OFF O B-object O
+O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O O O B-parameter.ALL I-parameter.ALL O
+O O O B-parameter.ALL I-parameter.ALL
+O B-action.SET B-object I-object B-brightness.INCREASE I-brightness.INCREASE
+O O O O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SET O B-object B-color I-object
 O O O O O O
-O B-action B-object B-state
+O O B-action.SET B-object O B-brightness.DECREASE
+O O B-action.SET O B-object I-object O O B-brightness.INCREASE
+O O B-action.SWITCH_OFF O B-object O I-action.SWITCH_OFF
+O O B-action.SET B-object I-object B-brightness.INCREASE
+O O O O O
+O O O O O O B-parameter.HUMIDITY O O O O
+O O B-action.SET O B-object B-color I-object
 O O O O O O
-O O O O O O O
-B-action O B-object
-O B-action O B-object B-state
-O O B-action O B-object O
-O O B-action O B-object B-state
-O O B-action B-object
-O O O O O O
-B-action B-state B-object O
-B-action B-object O
+O O B-action.SET B-object O B-brightness.VALUE
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SWITCH_OFF O B-object O O
+O B-action.SET O B-object O O B-brightness.INCREASE
+O O O O B-parameter.HUMIDITY O O
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O O O O O O
+O O B-action.SET O B-parameter B-temperature O
+O O O B-action.SWITCH_ON B-object O
+O O O O B-parameter.ALL I-parameter.ALL
+O O O
+O O O O O B-action.SET B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O B-parameter.CO2 O O
+O O O O O B-action.SET B-object B-brightness.DECREASE
+O O B-action.SET B-parameter B-temperature O O O
+O O B-action.CLOSE B-object
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O O B-parameter.HUMIDITY O O
+O O O B-action.SET B-object O B-color I-object
+O O O O O
+B-action.SET O B-object I-object O B-brightness.INCREASE O
+O O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O O B-action.SET O B-object O B-color I-object
+B-action.SET B-object I-object B-brightness.VALUE O I-object
+O O B-action.SWITCH_OFF B-object
+O O B-action.SET O B-object O O B-brightness.INCREASE
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O B-action.SET B-object O B-color
+O O B-action.SET B-object O B-brightness.VALUE
+O O O O O B-action.SET O B-object I-object B-brightness.INCREASE I-brightness.INCREASE
+B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SET O B-object I-object O B-color
+O O O O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object I-object O B-brightness.INCREASE O
+O O O B-action.SET B-object O B-brightness.INCREASE
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O B-parameter.TEMPERATURE O O O
+O O B-action.SET B-object O B-brightness.VALUE O O
+B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O O
 O O O O O O O
 O O O O O
-O O B-action B-object B-state O
-O O B-action O B-object B-state O
-O B-action B-object O
-O B-action O B-object
-B-action B-object O
-O O O B-action O B-object O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O
+O O B-action.SET B-object I-object O O B-brightness.DECREASE
+O O O O O O O
+O O B-action.SET O B-object O B-brightness.VALUE O O
+O O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O B-action.SET B-object I-object B-brightness.DECREASE
+B-action.SWITCH_ON O B-object
+O O O B-action.SET B-object I-object B-brightness.VALUE O
+O O B-action.SET O B-object O B-brightness.VALUE O
+O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O B-parameter.CO2 O O O O
+O O O O O B-parameter.CO2 O O O O
+O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O O B-parameter.TEMPERATURE O O O O
+O O O O
+O B-action.SET O B-object O B-color I-object
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O B-action.SET B-object O B-color
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O B-parameter.TEMPERATURE
+O O O O O B-parameter.HUMIDITY O O O
+O O O B-parameter.ALL I-parameter.ALL
+O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O B-parameter.TEMPERATURE O
+O O O O O
 O O O O O O O O O O
-O O B-action B-state B-object O
-O O B-action B-object B-state O
-O B-action O B-object B-state
-B-action B-state B-object O
-O O
-O O B-action B-state B-object O
-O O O B-action B-state B-object
-B-action B-state B-object O
-O O O O O O O O
-O O B-action B-object B-state O
-O O B-action B-state B-object
-O O O O O O O
-O O B-action B-state B-object
-O O B-action O B-object B-state O
-O O O O O
-O O O B-action B-object O
-O O O O O O O
-O O B-action O B-object
-B-action O B-object O O
-B-action B-object
-O O B-action O B-object B-state
-O O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O B-parameter.CO2 I-parameter.CO2 O O
+O B-action.SET B-object O B-brightness.VALUE
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.TEMPERATURE O O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object O B-brightness.VALUE O
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O O O O
+O B-action.SET O B-object O B-color I-object
+O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O B-action.SET B-object B-parameter O B-temperature O
 O O O O O O O O O
-B-action O B-object O
-O B-action B-object O
-O O O O
-B-action O B-object B-state O
-O O O O
-O B-action B-state O B-object
-O O B-action B-object
-O B-action O B-object O
-O O O B-action B-state O B-object
-O O B-action B-state B-object O
-O O O B-action B-state B-object
-B-action O B-object
-O O B-action O B-object B-state
-O O B-action B-state O B-object
-O O B-action B-object B-state O
-O O O O
 O O O O O
-O O O O O O O
-O O O O O O O
-B-action B-object B-state
-O
-O O O
-B-action B-state O B-object O
-B-action O B-object O
-O O O
-B-action B-object B-state O
-O O O O O O O
-O O
-B-action O B-object O
-O O B-action O B-object B-state O
-B-action B-object B-state O
-B-action O B-object O
-O O B-action O B-object O
-O O B-action B-state O B-object
-O O O B-action B-object B-state
-O O O B-action B-state B-object
-O B-action O B-object B-state
-B-action O B-object O
-O O O O O O O O
-O O B-action B-object B-state
-O O O O O O O O
-O O O O O O
-O B-action B-state B-object
-O O O
-O O O B-action B-object B-state
-O O O
-O O B-action B-state O B-object O
-B-action B-object O
-O O O O O O
-O O O B-action B-object B-state
-O O
-O O O
-O B-action B-state O B-object
+B-action.SWITCH_ON I-action.SWITCH_ON O B-object
 O O O O O
-B-action B-state B-object
-B-action B-object I-object O B-state
-B-action B-state B-object
-O O B-action B-state O B-object
-B-action B-state B-object
-O O O O O
-O O O B-action O B-object
-B-action B-object B-state
-B-action B-object O O
-O B-action O B-object O B-state O
-B-action B-object O O
-O O O O O O O O
-O O O O O O O
-O O
-O O B-action B-object O
-B-action O B-object O
-O O B-action B-object B-state
-O O O B-action B-state B-object
-B-action B-object I-object O B-state O O
-B-action B-object B-state
-O O B-action O B-object O
-O O O B-action B-object B-state
-O O B-action B-state O B-object O
-O O B-action O B-object B-state
-O O O B-action B-object
-O B-action O B-object O B-state O O
-O O O O O O O
-B-action B-state B-object
-O O O B-action B-state B-object
-O O B-action O B-object B-state
-B-action O B-object
-O O B-action B-state O B-object
-O O O B-action B-state B-object
-O O B-action B-object B-state
-O O O B-action B-object
-O O O O
-B-action B-state B-object
-B-action B-object O
-O O O O
-O B-action O B-object
-O O O B-action O B-object
-O O B-action B-state O B-object O
-O O B-action B-object O O
-O B-action O B-object B-state
-O B-action O B-object O
-O B-action B-object B-state
-O O B-action B-object O B-state O O
-O O O O O
-O O B-action O B-object O O
-O B-action B-object B-state
-O O O O O
-B-action O B-object B-state
-O O O O O O
-O O O B-action B-state O B-object
-O O B-action B-state O B-object O
-O B-action B-state B-object
-B-action O B-object
-O O O O O
-O O B-action B-object
-O B-action B-state O B-object
-O O O
-O O O B-action B-state O B-object
-O B-action O B-object
-O O B-action B-state O B-object
-O B-action B-object
-B-object B-state O
-O O O O O
-B-action O B-object O
-O O O O O O
-O O
-O O B-action B-state B-object O
-O O B-action O B-object O
-O O O O O O O
-B-action O B-object B-state O
-B-action B-object B-state
-O O O O
-O B-action B-object O
-O O O O
-O O O B-action O B-object
-O O B-action B-object B-state
-B-action O B-object
-O O B-action B-state O B-object
-O O O B-action O B-object O
-O O O O O O
-B-action O B-object O O
-O O O B-action B-state O B-object
-B-action B-state O B-object
-O O O O O O O O
-O O B-action B-state O B-object
-O O B-action B-state B-object O
-O O B-action B-object B-state
-O O B-action O B-object
-O O B-action B-object
-B-action B-state B-object O
-O O B-action B-object O O
-O O O B-action B-state O B-object
-O B-action B-state B-object
-B-action O B-object B-state
-O O O B-action O B-object O
-O O B-action B-state B-object O
-B-action B-state O B-object
-O O B-action B-state O B-object O
-O B-action B-object O
-O B-action B-state O B-object
-O B-action B-object O
-O O O B-action B-state O B-object
-O O O B-action B-state O B-object
-O O O B-action O B-object B-state
-B-action O B-object B-state O
-O O O B-action B-object B-state
-O O O B-action B-state O B-object
-B-action B-object O
-O O
-O O O B-action O B-object
-O O B-action O B-object
-B-action B-object O
-O B-action B-object
-O O O O
-O O B-action O B-object O
-O O O B-action O O
-O O O B-action B-state O B-object
-B-action B-object O
-O O B-action B-object B-state
-O O B-action B-object O O
-O O O O O
-O O B-action O B-object O
-O O B-action B-object O O
-O O O B-action B-object B-state
-O B-action B-object
-O O B-action B-object B-state
-B-action B-object O
-B-action B-state B-object O
-B-action O O B-object
-O O O B-action B-object B-state
-O O O O
-B-action B-object O
-B-action B-object B-state
-B-action O B-object O O
-O B-action B-state O B-object
-O O B-action B-object O O
-O B-action B-state B-object
-O O B-action O B-object B-state
-O O B-action B-object O
-O O O O O O O O
-O O B-action B-object O O
-O O O B-action B-state O B-object
+O O B-action.SET O B-object O B-color I-object
+O O O B-parameter.CO2 O O O O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SET O B-object O B-color
+O O O O O B-action.SET B-object O B-brightness.VALUE O
+O O B-action.SET O B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O O O O O B-parameter.TEMPERATURE O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O O O O B-parameter.CO2 O
+O B-action.SET O B-object O B-brightness.VALUE O O
 O O O O O O O O O
-O O O O O O O
-B-action O B-object O B-state O O O
-B-action B-state O B-object O
-O O B-action B-object O
-O O B-action B-state O B-object
-O B-action B-state B-object
-O O B-action B-object B-state
-O O O B-action B-object B-state
-O O O B-action B-state B-object
-B-action B-object B-state O
-O O O O O O O
-O B-action O B-object O
-O O O O O O
-O O O B-action O B-object O
-O O B-action O B-object B-state O
-O O B-action B-object B-state
-O O B-action O B-object B-state
-O O O B-action B-object B-state
-O O
-O O B-action B-state O B-object O
-O B-action O B-object B-state
-O O B-action O O B-state
-O O B-action O B-object B-state
-O O O B-action B-state B-object
-O B-action O B-object
-O O O B-action O B-object B-state
-B-action B-state O B-object O
-O O O B-action O B-object B-state
-O O O O
-O O B-action O B-object
-O O B-action O B-object B-state O
-O O O B-action B-object B-state
-O O B-action B-state B-object O
-O O O B-action B-state O B-object
-O O O O O O O
-O O B-action B-state O B-object
-O O B-action B-state O B-object O
-O O B-action O B-object B-state
-O O
-O B-action B-object
-B-action O B-object B-state
-O O B-action B-state B-object
-O O O B-action B-state B-object
-O O O B-action O B-object O
-O O B-action O B-object O
-B-action O B-object O
-O O O O
-O B-action O B-object
-B-action B-object O
-O O B-action B-state O B-object O
-O O O O
-O O B-action B-state B-object
-O O O O
-O O B-action B-state O B-object
-O O B-action B-state O B-object O
-B-action B-state O B-object
-B-action B-state O B-object O
-O O O O O O
-O O B-action B-object B-state
-O O O B-action B-object
-O O B-action B-state O B-object O
-O O B-action O B-object O O
-O O B-action B-state B-object O
-O O O O O
-O O B-action O B-object
-B-action O B-object O O
-O O B-action O B-object O O
-B-action B-object O
-O O B-action O B-object O
-O O O B-action B-state O O
-O O O O O
-O O B-action B-state O B-object O
-O O B-action B-object O
-O O B-action B-state B-object
-O B-action B-object I-object O B-state O
-O O O O O O
-O O B-action B-object O
-B-action O B-object O
-O O B-action O B-object
-B-action B-state O B-object
-O O O O O
+O O O O O O O B-parameter.CO2 O O O O O
 O O O
-O O B-action B-state B-object
-O O O B-action O B-object B-state
-B-action O B-object O
-O O O B-action B-state B-object
+O O O O O B-parameter.CO2 O O
+O O O B-parameter.CO2 I-parameter.CO2 O O
+O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O B-parameter.HUMIDITY O O
+O O O O O O O O O
+O B-action.SET B-object I-object B-brightness.VALUE O I-object
+O O O O B-action.SET B-object O B-brightness.DECREASE
+B-action.OPEN B-object O
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O
+O B-action.SET O B-object O B-brightness.VALUE O I-object
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O O O O O O O
+B-action.SET O B-object O B-brightness.VALUE
+O O O O O O O B-parameter.CO2 O O O O
+O O O B-action.SWITCH_ON O B-object
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O O O B-parameter.TEMPERATURE O O O O
+O O O O O O O B-parameter.TEMPERATURE O O
 O O O O O O
-O O B-action B-state O B-object O
-O O B-action O B-object B-state
-O O O O
-O B-action B-state O B-object
-O O O B-action B-object B-state
+O O B-action.SET O B-object I-object O B-brightness.INCREASE O
+O O O O O O B-parameter.CO2 O O O
+O O O O O O O B-parameter.HUMIDITY O
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O O O O
+O O B-action.SET B-object O B-brightness.VALUE
+O O O O O
+O O B-action.SET B-object O B-color O
+O O O O B-action.SET O B-object O B-brightness.VALUE O I-object O
+O O O B-parameter.TEMPERATURE O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+B-action.SET O B-object I-object O B-brightness.VALUE
+O B-action.SWITCH_ON O B-object
+O O O B-parameter.CO2 O O
+O O B-action.SWITCH_OFF O B-object
+O O O O B-action.SET B-object O B-brightness.VALUE O
+O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O O O B-parameter.HUMIDITY O O O O
+O O B-action.SET B-object I-object B-brightness.INCREASE O
+O O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object O B-brightness.INCREASE
+O O B-action.SET O B-object O O B-brightness.DECREASE
+O O O O O O O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O B-action.SET O B-object O O B-brightness.DECREASE O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
 O O O O O O O
-O O O B-action B-state B-object
-B-action O B-object O
-O O B-action B-state O B-object
+O O O O O B-parameter.CO2 O O
+O O O O O O O O B-parameter.HUMIDITY O
+O O B-action.SWITCH_OFF O B-object
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O
+O B-action.SET O B-object O B-color I-object
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O O B-parameter.CO2 O O O O
+O O O O B-parameter.CO2 O O O O O
+B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O B-action.SET O B-object O B-brightness.VALUE O I-object
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SWITCH_OFF O B-object O I-action.SWITCH_OFF
+O O O O B-parameter.TEMPERATURE O O O
+O O B-action.SET B-object I-object O B-color
+O O O O O O O O
+O B-action.SET B-object I-object B-color
+O O B-parameter.TEMPERATURE O O O
+O O O O O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O B-action.SET O B-object O B-color
+O B-action.SET B-object O O B-brightness.DECREASE
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O B-action.SET O B-object O B-color O
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O O O B-action.SET O B-object O B-brightness.VALUE O
+O O O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O B-action.SWITCH_OFF O B-object
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O O O B-parameter.HUMIDITY O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O B-parameter.HUMIDITY O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O O B-action.SET O B-object I-object O O B-brightness.INCREASE
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O B-action.SET O B-object O B-brightness.VALUE O
+O O O B-parameter.ALL I-parameter.ALL
+O O O B-parameter.CO2 O O O O O
+O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SET B-object O B-color I-object
+O O B-action.SET B-object B-parameter O B-temperature O O O
+O O O O
+O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O O B-parameter.CO2 I-parameter.CO2 O O
+O O B-action.SET O B-object I-object B-brightness.DECREASE O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
 O O O O O O O O O O O
-O O B-action O B-object O
+O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O B-parameter.HUMIDITY O O O
+O B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O B-action.SET O B-object B-brightness.DECREASE
+O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O B-action.SET O B-object O B-brightness.VALUE I-object
+O O O O O B-parameter.CO2 O O
+O O
+O O O O O O O O O O O
+O O O O O O O O O O O
+O O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+O O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O O O
 O O O O O
-O O B-action O B-object O
-O O O B-action B-state O B-object
+O B-action.SWITCH_OFF B-object O
+O O O O B-parameter.ALL I-parameter.ALL O
+O O B-action.SET B-object O B-brightness.INCREASE
+O O B-action.SET O B-object B-brightness.VALUE O I-object
+O O B-action.SET O B-object O B-color
+O O O O O B-parameter.TEMPERATURE O O O
+O O O O O O O
+O O O O O B-parameter.HUMIDITY O
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O O O B-parameter.HUMIDITY O O O O
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+B-action.SET O B-object B-brightness.INCREASE
+O O O O O O O O
+O O B-action.SET B-object O B-brightness.VALUE O
+O O O O O B-action.SET O B-object O B-color
+O O O B-action.SET O B-object I-object B-color
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_OFF B-object O I-action.SWITCH_OFF
+O O B-action.SET O B-object B-brightness.VALUE O I-object O
+O O O B-action.SWITCH_OFF B-object
+O O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O O O O B-parameter.HUMIDITY O O O O
+B-action.SWITCH_ON O B-object
+O O B-action.SWITCH_OFF O B-object O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O B-parameter.CO2 O O O O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O B-parameter.HUMIDITY O O O
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O O B-action.SET B-object O B-color
+O O O O O B-parameter.CO2 O
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O O O O B-parameter.CO2 O
+O O O B-action.SET B-object I-object O B-brightness.VALUE O I-object
+O O O O O O O
+O O O O O O B-parameter.CO2 O O O O
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+B-action.SET B-object O B-color I-object
+O O O O B-action.SET B-object B-color
+O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O B-action.SET O B-object O B-brightness.VALUE
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SET B-object I-object B-brightness.VALUE O I-object
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O O O
+O O O O O O O B-parameter.TEMPERATURE O O O
+O O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET B-object O B-color O
+O O O O B-parameter.HUMIDITY O O
+O O B-action.SET O B-object B-brightness.VALUE O I-object
+O O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O B-action.SET O B-object O B-brightness.VALUE O I-object
+O B-action.SET O B-object I-object B-color
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O B-parameter.CO2 O O O O
+B-parameter.CO2 I-parameter.CO2 O O O O O O
+O O O B-action.SET O B-object O B-color
+O O B-action.SET O B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O
+O O O
+O O B-parameter.HUMIDITY O O O O O
+O O O O O O O O
+O O O
+O O O O O
+O O O B-action.SET O B-object B-color
+O O B-action.SET O B-object O B-color
+O O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O O B-parameter.TEMPERATURE O O O
+O O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O O O O O B-parameter.CO2 O
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O B-action.SET B-object I-object O B-brightness.DECREASE
+O O B-action.SWITCH_OFF B-object O
+O O B-action.SET O B-object O B-brightness.DECREASE O
+B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O B-action.SET O B-parameter B-temperature
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O B-parameter.CO2 O O O O
+O O B-action.SWITCH_ON O B-object O
+O O O O B-parameter.HUMIDITY O O
+O O B-parameter.ALL I-parameter.ALL O
+O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SET B-object B-brightness.VALUE O I-object O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+O O O O O O O O B-parameter.TEMPERATURE O O
+O O O B-action.SET B-object O B-brightness.VALUE O
+B-action.SWITCH_OFF O B-object O
+O O B-action.SET O B-object I-object O B-brightness.VALUE I-object O
+O O B-action.SET B-object B-parameter B-temperature O O
+O O O O B-parameter.HUMIDITY O O O O
+O O O B-action.SET O B-object I-object O B-brightness.DECREASE
+O O O O O O B-parameter.HUMIDITY O O O O O O
+O O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O O O B-parameter.HUMIDITY O O
+O B-action.SWITCH_ON B-object
+O O B-action.SET B-object I-object O B-color O
+O B-action.CLOSE B-object
+B-action.SWITCH_OFF O B-object O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O O O O
+O O O O
+O O B-action.SET B-object B-parameter O B-temperature O
+O O B-action.SET B-object I-object O B-brightness.DECREASE
+O O B-action.SET B-object B-parameter B-temperature
+O O O O O B-parameter.HUMIDITY O O O
+B-action.SET B-object O B-brightness.VALUE
+O O O B-action.SET O B-object O B-brightness.VALUE
+O B-action.SWITCH_ON B-object
+O O O O O O O O B-parameter.CO2 O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O B-parameter.CO2 O O O O
+O B-action.SET B-object I-object O B-color
+O O O B-action.SET B-object O B-color I-object
+O O O O O B-parameter.TEMPERATURE O O
 O O O O O O
-O O
+O O O B-action.SET B-object I-object B-brightness.VALUE I-object
+O O B-action.SET B-object O B-brightness.VALUE O
+O O O O O O O
+O O B-parameter.HUMIDITY O O O
 O O O O O O
-O B-action B-state O B-object
-O O B-action B-state B-object
-O B-action B-object
-O O B-action B-state O B-object
-O O B-action O B-object
-O O O
-O B-action B-state B-object
-O O B-action O B-object B-state O
-O O O B-action O B-object
-O O B-action O B-object B-state
-B-action B-object O B-state O
-B-action O B-object B-state O
-O O O B-action B-object B-state
-B-action O B-object O
-O O O
-O O O B-action O B-object O
-B-action B-state O B-object
-O O O B-action B-state B-object
-O O B-action B-state B-object O
-O O B-action B-state O B-object O
-B-action B-state B-object
-O O B-action O B-object O
-B-action B-object B-state O
-O O B-action O B-object B-state
-O B-action B-object
-B-action B-object O
-B-action O B-object B-state
-B-action B-object O B-state
+O O O B-parameter.CO2 O O O O
+O O O O O O O B-parameter.HUMIDITY
+B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O B-action.SET O B-object B-brightness.VALUE O
+O O O O O O O
+O O O O O O O B-parameter.CO2 O O
+O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O O O B-action.SET O B-object I-object O B-color
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SET O B-object O B-brightness.VALUE I-object
+O O O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object O
+B-action.SET O B-object I-object B-brightness.DECREASE
+O B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O O O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O B-parameter.CO2 I-parameter.CO2 O O
+O O O B-action.SET B-object I-object O B-brightness.VALUE
+O B-action.SET B-object O B-color I-object O
+O O O O O B-parameter.CO2 O O O
 O O O O
-O B-action B-state O B-object
+O O O O B-action.SET O B-object I-object O B-brightness.DECREASE O
+O O O O O O
+O B-action.SET B-object I-object O B-brightness.INCREASE O
+O O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O B-action.SET O B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+B-action.SWITCH_ON B-object O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+O O B-action.SET O B-object O B-color I-object
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O O
+O O O B-action.SWITCH_ON O B-object
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-parameter.CO2 O O O
+O O O O O
+O O O B-action.SET B-object O B-color I-object
+O O B-action.SET O B-object B-brightness.INCREASE I-brightness.INCREASE
+O O O B-parameter.TEMPERATURE O
+B-action.SWITCH_OFF B-object O
+O O B-action.SET B-object O B-color
+O B-action.MUTE O B-object
+O O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O O O B-parameter.ALL I-parameter.ALL O
+O O O O O O
+O O O B-action.SWITCH_OFF B-object O I-action.SWITCH_OFF
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O O O O B-parameter.HUMIDITY O O O O
+B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object B-brightness.DECREASE I-brightness.DECREASE
+O O B-action.SET B-object O B-color I-object O
+B-action.SET B-object I-object O B-color
+O O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O B-action.SET O B-object O B-color
+O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O O O O O O
+O O O O O B-parameter.TEMPERATURE O O
+O O O B-action.CLOSE B-object
+O O B-action.CLOSE O B-object
+O O B-action.SET O B-object O B-brightness.VALUE O
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
 O O O O
-O B-action O B-object
-O O B-action B-state B-object O
-O O B-action B-state B-object O
-B-action B-object O
-O O O B-action O B-object B-state
-B-action B-state B-object
-O O B-action B-object B-state
-O O B-action O B-object B-state
-O O O B-action O B-object B-state
-O O B-action O B-object O
+O O O B-action.OPEN B-object
+O O O B-action.SET B-object O B-color I-object
+O O O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O O O O
+O O O B-action.SET O B-object B-brightness.INCREASE
+O O O B-parameter.CO2 O O O O
+B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O O B-parameter.CO2 O
+O B-action.SET B-object O B-color
+B-action.SET O B-object O B-color I-object
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O B-action.SET B-object I-object B-brightness.INCREASE I-brightness.INCREASE
 O O O
-B-action B-object O O
-O B-action O B-object O
-O O B-action O B-object O
-O B-action B-state B-object
+O O O O O
+O O B-action.SET B-object B-parameter B-temperature O O
+O O O B-parameter.HUMIDITY O O
+O O O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O B-action.SET B-object I-object B-brightness.VALUE O I-object O
+O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O O B-parameter.CO2 O
+O O B-action.SET B-object I-object B-brightness.DECREASE
+O O O O O O O O O B-parameter.TEMPERATURE
+O O B-action.MUTE B-object
+O O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O B-parameter.CO2 O O O O O O
+O O O B-action.SET O B-parameter B-temperature O
+O O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O B-parameter.CO2 O O O O
+O O O O B-action.SET O B-object I-object B-brightness.VALUE O
+O B-action.SET B-object B-parameter B-temperature O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O O
+O O O O B-action.SET O B-object O B-color I-object
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O B-action.SET B-object O B-color I-object O
+O O O O B-parameter.HUMIDITY O O O O O
+O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O
+O O O O B-parameter.CO2 O O O O O
+O O B-action.UNMUTE B-object
+O O O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O O B-parameter.HUMIDITY
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O O O O O O O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O B-parameter.TEMPERATURE O O O
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O O O O O O O
+O B-action.SET B-object B-brightness.INCREASE
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O O B-parameter.CO2 O O O O O
+O O O O O O O B-parameter.CO2 O O O O
+O O O B-action.SET B-object B-brightness.INCREASE
+O O O B-action.SWITCH_OFF B-object
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O O O B-parameter.CO2 O O O O O
+O O O O B-parameter.ALL I-parameter.ALL
+O O O B-action.OPEN B-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET O B-object B-brightness.INCREASE O
+O O O B-action.CLOSE B-object
+O O B-action.SWITCH_OFF O B-object
+O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O O O B-parameter.CO2 O O O O O
+O O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O O O B-parameter.HUMIDITY O
+B-action.SET O B-object I-object O B-brightness.VALUE
+O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O B-action.OPEN B-object
+O O O O O
+O O O B-action.SWITCH_ON O B-object
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SET O B-object O B-brightness.DECREASE
+O O B-action.SET B-object I-object O O B-brightness.INCREASE
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+O O B-action.SWITCH_ON B-object O I-action.SWITCH_ON
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O O O
+B-action.SWITCH_OFF B-object O I-action.SWITCH_OFF O
+O O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O B-action.SET B-object B-parameter O B-temperature O
+B-action.SWITCH_OFF O B-object
+O O O O O O B-parameter.CO2 O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O O
+O O B-action.SET B-object O B-color
+O O B-parameter.HUMIDITY O O O O
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O O B-parameter.HUMIDITY O O O O
+O B-action.CLOSE O B-object
+O B-action.SET O B-object I-object O B-brightness.VALUE O
+O B-action.SET O B-object O B-brightness.VALUE O
+O O B-action.SET O B-object O B-color I-object O
+O O B-action.SET B-object B-brightness.DECREASE
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+B-action.SWITCH_OFF O B-object O
+B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SET B-object O B-color I-object O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O O O O O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O O O B-parameter.HUMIDITY O O
+O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O B-action.SWITCH_OFF B-object
+O O O O O O O O O
+O O B-action.SWITCH_OFF O B-object O
+O O B-action.SET O B-object O B-color
+O O O O O O
+O O O O O O O B-parameter.CO2 O O
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O O O B-action.SET O B-object O B-color
+O O B-action.SWITCH_OFF B-object O
+O O O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_OFF B-object
+O O O O O O O
+O O O B-parameter.HUMIDITY O O O O
+O O O B-action.SET O B-object O B-color I-object
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O B-action.SET O B-object I-object B-brightness.DECREASE I-brightness.DECREASE O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+B-action.SWITCH_ON O B-object O
+O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O B-action.CLOSE B-object
+O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
 O O O O
-O O B-action O B-object
-O O O B-action O B-object
-O O B-action B-state B-object
-O O B-action B-object B-state O
-O O B-action B-object B-state
+O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O B-action.SET B-object O B-brightness.VALUE O
+O O O O B-parameter.TEMPERATURE O O O
+B-action.SET B-object O B-color I-object
+O O B-action.SET O B-object I-object B-brightness.INCREASE
+O O B-action.SET B-object I-object O O B-brightness.DECREASE
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+B-action.SET O B-object O B-brightness.INCREASE
+O O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O B-action.SET O B-object I-object O B-color
+B-action.SWITCH_ON I-action.SWITCH_ON B-object O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE I-object
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O B-parameter.HUMIDITY O O O
+O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O O O B-parameter.CO2 O O O O
+O O B-action.SET B-object I-object B-brightness.VALUE O
+O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O B-action.SET O B-object O B-brightness.INCREASE
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O B-parameter.HUMIDITY O O O O O
+B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+B-action.SET O B-object I-object B-brightness.DECREASE
+O O B-action.SET B-object B-parameter O B-temperature
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O B-action.SET B-object B-parameter B-temperature
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O O O B-parameter.CO2 O O O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+O O O O B-action.SET B-object O B-brightness.VALUE O
+O O O O B-parameter.HUMIDITY O O O O
+O O O B-action.SET O B-object O B-brightness.DECREASE
+O O B-action.SET B-object B-brightness.INCREASE
+O O O B-action.CLOSE B-object
+O O B-action.SWITCH_OFF O B-object
+O O O O O O O O
+O O O O B-action.SET O B-object I-object O B-color
+O O O O O O O O O B-parameter.CO2 O
+O O O B-action.SET B-object O B-color
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O O O B-parameter.TEMPERATURE O O O O
+B-action.SWITCH_ON O B-object
+O O O B-action.SWITCH_OFF O B-object
+O O B-action.SET B-object B-parameter O B-temperature O O O
+O O B-action.SWITCH_OFF B-object O
+O O O O O O B-parameter.HUMIDITY O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O B-action.SWITCH_ON O B-object O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET B-object I-object B-brightness.VALUE I-object
+B-action.SET O B-object O B-color O
+O O O O O O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O
+O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET B-object I-object O O B-brightness.DECREASE
+O O O B-action.SET O B-object O O B-brightness.DECREASE
+B-action.SET B-object O B-brightness.VALUE O
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O
+O O O O O O O O
+O O B-action.SWITCH_OFF B-object O O
+O O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O
+O O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SET B-object O B-brightness.VALUE
+O O O O O B-action.SET B-object I-object B-brightness.VALUE O I-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O
+O O B-action.SET O B-object O B-color I-object
+O O O O O O O O O O
+B-action.SET O B-object I-object O B-brightness.DECREASE
+O O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O B-parameter.TEMPERATURE
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SET O B-object O B-color
+O O B-action.SET O B-parameter O B-temperature O
+B-action.SWITCH_OFF O B-object O
+O O O B-action.SET O B-object I-object B-brightness.DECREASE
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O B-parameter.HUMIDITY O O O O O
+O O B-action.SWITCH_OFF B-object O
+O B-action.OPEN B-object
+O O O O O O B-parameter.HUMIDITY O
+O O O O O O B-parameter.TEMPERATURE O O O O
+O O B-action.SET B-object I-object O B-brightness.VALUE I-object O
+O B-action.SET O B-object I-object O B-color O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_OFF B-object O
+O O B-action.SWITCH_OFF B-object
+O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+B-action.SET O B-object I-object O B-color
+B-parameter.HUMIDITY O O O O
+B-action.SWITCH_ON B-object O I-action.SWITCH_ON O
+O O O B-action.SET O B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O B-parameter.CO2 O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object O
+O O O O O O O O B-parameter.HUMIDITY
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+B-action.SET B-object O B-color O
+O O B-action.SET O B-object O B-color I-object O
+O O O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET O B-parameter B-temperature O
+O O O O B-action.SET O B-object I-object B-brightness.INCREASE O
+B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O B-action.OPEN B-object
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O O B-parameter.TEMPERATURE O O O O
+O O B-action.SWITCH_ON B-object
+O O O O O O O B-parameter.CO2 O O O O O O
+O O O O
+O O B-action.SET O B-object O B-brightness.INCREASE
+B-action.SET B-object I-object O B-brightness.VALUE I-object
+O O O O B-action.SET B-object O B-brightness.VALUE
+O O O B-action.SET O B-parameter O B-temperature O
+O O O O O O
+O O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+B-action.SET O B-object I-object O B-color
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O
+O O O O O O O
+O B-action.SET B-object I-object B-brightness.INCREASE
+O O O O O O O
+O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O O O O
+O O O B-action.OPEN B-object
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O O
+O O O B-action.SET B-object I-object B-color
+O O B-parameter.CO2 O O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O B-parameter.ALL I-parameter.ALL O
+O O O O O O O
+O O O O B-parameter.CO2 O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O O
+O O O O
+O O O B-action.SET B-object O B-color I-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O B-parameter.ALL I-parameter.ALL
+O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O
+O O O O O O O O
+O O O B-parameter.TEMPERATURE O O O
+O O O B-action.SET B-object I-object O B-color
+O O O B-action.SET O B-object I-object B-color
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O B-parameter.CO2 O O O O
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O B-action.CLOSE B-object
+O O O O O O O B-parameter.HUMIDITY O O O
+O O O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O B-action.SET B-object I-object B-brightness.INCREASE O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O B-action.SWITCH_OFF O B-object
+O O B-action.SET O B-object B-brightness.VALUE O
+O O O B-parameter.HUMIDITY O
+O O O O O
+O O O O O O
+O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O
+O O B-action.SWITCH_ON B-object
+O O O O O B-parameter.CO2 I-parameter.CO2 O O
+O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object B-brightness.VALUE O O
+O O O
+B-action.CLOSE O B-object
+O O O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O O O
+O O B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O O O
+O O O O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET B-object I-object B-brightness.INCREASE
+O O B-action.SET B-object I-object O B-brightness.VALUE O I-object O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O
+O B-parameter.CO2 O O O O
+O O O O O O B-parameter.HUMIDITY O O
+O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+B-action.SET B-object B-brightness.VALUE O
+O O O O O B-action.SET B-object I-object O B-brightness.DECREASE
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O B-action.SET O B-object I-object O B-color
 O O
-O B-action B-object
-O O B-action B-object
-O O O B-action B-state B-object
-O O B-action B-object O
-O O B-action O B-object B-state
-O B-action B-object
-B-action B-state O B-object
-O O B-action B-state O B-object
-O O B-action O B-object O
-B-action B-object O
-B-action B-object O O
-O O B-action O B-object
-B-action O B-object B-state O
-O B-action O B-object
-O O O B-action B-state O B-object
-O B-action O B-object B-state
-O O B-action B-object B-state
-O O O B-action B-object
-O O B-action B-state O B-object
-O B-action B-state B-object
-O O O B-action O B-object B-state
-O O B-action O B-object B-state O
-O O B-action O B-object O O
-O O B-action B-object B-state
-B-action B-state B-object O
-B-action O B-object O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O B-parameter.CO2 O O
+O O O O O O O O B-parameter.HUMIDITY O
+B-action.SWITCH_ON O B-object
+O O O O O O O O
+O O O O B-parameter.HUMIDITY O O O O O
+O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O B-action.SET O B-object O B-color
+O O O O O B-action.SET B-object I-object O B-color
+O O O O B-parameter.HUMIDITY O O O O
+B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O O B-action.SET O B-object B-brightness.VALUE O
+O O B-action.SET B-object B-brightness.INCREASE O
+O O O O B-action.SET O B-object B-brightness.VALUE O
+O O B-action.SET B-object B-color I-object O
+O O O O B-action.SET O B-object I-object O O B-brightness.DECREASE O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O O O B-action.SWITCH_OFF O B-object
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+B-action.SET O B-object I-object B-brightness.INCREASE
+O B-action.SET O B-object B-brightness.VALUE O
 O O O O
-B-action O B-object B-state
-O O B-action O B-object O
+O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O B-parameter.HUMIDITY O O O O
+O O O O B-parameter.TEMPERATURE
+O O B-action.SET O B-object O B-color O
+O B-action.SET O B-object O B-color I-object O
 O O O
-O B-action O B-object O
-O O B-action B-object O
-O B-action B-object O
-O O B-action B-state O B-object
-O O B-action O B-object B-state O
-O O O B-action B-state O B-object
-B-action O B-object O
-O B-action O B-object
-O O B-action B-state B-object
-O O B-action O B-object B-state
-O O B-action B-state O B-object
-O O B-action O B-object B-state O
-O O
-B-action O B-object B-state O
-O O B-action B-object O
-O O B-action B-object B-state O
-O B-action O B-object
-O O B-action O B-object B-state
-O O B-action B-state O B-object O
-B-action O B-object
-O O B-action O B-object
-O B-action B-object B-state
-O O B-action B-object
-O O O B-action O B-object B-state
-O O B-action B-state B-object
+O O O O O O O
+O B-action.SET B-object I-object B-brightness.INCREASE I-brightness.INCREASE
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O B-action.SWITCH_OFF B-object
+O O B-action.SET B-object O B-brightness.VALUE O
+O O O O O O O B-parameter.CO2 O O O O O
+O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SWITCH_OFF B-object
+O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O B-action.CLOSE B-object
+O O O O O O O B-parameter.CO2 O O O O
+O O O O O O O B-parameter.HUMIDITY O O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O O B-action.SET O B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object
+O O O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O B-action.SET B-parameter B-temperature O
+O B-action.SET O B-object O B-brightness.VALUE O
+O O O O O B-parameter.HUMIDITY O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+B-action.SET O B-object O B-brightness.VALUE
+O B-action.SET O B-object B-color O
+O O O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O B-parameter.CO2 I-parameter.CO2 O O
+B-action.SET O B-object O B-color I-object
+O B-action.SET O B-object O B-color
+O O O
+O O O O O
+O O B-action.OPEN B-object
+O O O B-parameter.CO2 I-parameter.CO2 O
+O O B-action.SET O B-object I-object O B-brightness.DECREASE O
+B-action.SWITCH_ON O B-object O
+O O O O O O O O O
+O O O O O O
+O O O O O O O O
+O O O O O O O O O O
+O O O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O B-parameter.CO2 I-parameter.CO2 O O
+O O O O B-action.SET O B-object O B-brightness.DECREASE
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O B-action.SET O B-object O B-color I-object
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O O O B-parameter.CO2 O O O O O
+O O B-action.SET B-object I-object O B-brightness.INCREASE O
+O O B-action.SET O B-object I-object B-brightness.VALUE O
+O O B-action.SET B-object I-object O B-color O
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O O O O O
+O O O O O O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.CLOSE O B-object
+O O O O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O B-action.SET O B-object I-object B-brightness.INCREASE
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O O O
+O O O O B-parameter.CO2 O
+O O O O B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O B-parameter.CO2 I-parameter.CO2 O O
+O O O O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O B-parameter.TEMPERATURE
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O B-action.SET B-object B-brightness.DECREASE I-brightness.DECREASE O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O B-action.SET B-object I-object O O B-brightness.DECREASE
+O B-action.SET B-object B-color I-object O
+O O B-action.SET B-object O B-color I-object
+O O O B-parameter.CO2 O O O O
+O O O O B-parameter.HUMIDITY O O
+B-action.SET O B-parameter O B-temperature O
+O O O B-parameter.TEMPERATURE O O O
+O O O O B-parameter.CO2 O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O B-action.UNMUTE O B-object
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O O B-parameter.TEMPERATURE
+O O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O B-action.SET O B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O O O O O
+O O O O O O
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+O O O B-parameter.CO2 O O
+O O O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O O O O O O B-parameter.TEMPERATURE O O O O O
+O O O O B-parameter.TEMPERATURE O O O O
 O O O O
-O O O B-action B-state B-object
-O O B-action B-state B-object O
-O O B-action B-state B-object O
-O O B-action O B-object
-O O B-action B-object B-state
-O O O B-action B-state O B-object
-O O B-action B-object I-object O B-state
-B-action B-object O O
-B-action B-object O
-O O B-action B-object B-state
-O O O B-action B-object
-B-action B-state O B-object
-O O B-action B-object B-state
-O O B-action B-object B-state O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+B-action.SET B-object I-object O B-brightness.VALUE O
+B-action.SET B-object O B-brightness.VALUE O O
+O O O O O O B-parameter.TEMPERATURE O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O B-parameter.HUMIDITY O
+O O O O O O O O O O
+O O B-action.SET B-object O O B-brightness.INCREASE
+O B-action.SET O B-object O B-brightness.VALUE
+O O O O O O O O O
+O O O O O O
+O O O O O O O B-parameter.CO2 O O O O
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O B-parameter.CO2 O O O O O
+O O O O O O
+O O B-action.SWITCH_OFF O B-object
+O O O O O O B-parameter.TEMPERATURE O
+O O B-action.SWITCH_OFF B-object
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O O O O B-parameter.CO2 O O O
+O O B-action.SET B-object I-object B-brightness.VALUE O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O O O O B-parameter.TEMPERATURE O
+O O O O B-action.SET O B-object O B-color I-object
+O O O
+B-action.SWITCH_OFF O B-object
+B-action.SET B-object B-brightness.VALUE O
+O O B-action.SET B-object O B-color I-object
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.TEMPERATURE O O O
+O O B-action.SET O B-object O B-color I-object
+O O O O B-parameter.HUMIDITY O O O O O
+O O O B-parameter.ALL I-parameter.ALL
+O O O O B-parameter.CO2 O O O
+O O O O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O O O B-parameter.ALL I-parameter.ALL
+B-action.SWITCH_ON O B-object O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object
+O O B-action.SET B-object O B-color
+O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O
+B-action.SET O B-object I-object B-brightness.INCREASE I-brightness.INCREASE O
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O O O O O O O
+O O O O O O O O O O O O O
+O O O B-parameter.CO2 O O O O O
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O B-action.SET O B-object O B-color
+O O O O O B-parameter.CO2 O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O O O O
+O O O O O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O O O O O O
+O O O O O O O
+O O O
+O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O O O B-parameter.TEMPERATURE O O
+O O O O O B-action.SET B-object I-object B-brightness.VALUE O I-object
+O O O O B-parameter.CO2 O O O O
+B-action.SWITCH_OFF B-object
+O O O O O O O
+O O B-action.SET O B-object O O B-brightness.INCREASE O
+O O O B-parameter.ALL I-parameter.ALL
+O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O O O B-parameter.CO2 O
+O O O O O O O O O O O
+O O O O B-parameter.HUMIDITY O O O
+O O B-action.CLOSE O B-object O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O B-action.SWITCH_OFF O B-object
+O O O O O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O B-parameter.CO2 O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O O O B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O
+O O O B-action.SWITCH_OFF B-object O I-action.SWITCH_OFF
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O O
+O O O O O B-action.SET B-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+B-action.SET B-object I-object O B-brightness.VALUE
+O B-action.SET B-object I-object O B-brightness.VALUE O I-object
+O O O O O O O O O
+B-action.OPEN O B-object O
+B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O B-action.SET B-object O B-brightness.INCREASE
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O B-parameter.CO2 O O O O O
+O O O O O O O
+O O O B-action.SET B-object B-brightness.VALUE O I-object
+O O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON
+O O O O
+O O B-action.UNMUTE O B-object O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SET B-parameter O B-temperature O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O B-action.SET O B-object O B-brightness.VALUE O
+O O O B-action.SET B-object B-parameter B-temperature O
+O O O
+B-action.SET B-object I-object O O B-brightness.INCREASE O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SET B-object I-object B-brightness.INCREASE O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O O O O O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object O B-color I-object
+O O O O O O O
+O O O O B-parameter.CO2 O
+O O O O O O O O B-parameter.CO2 O O
+O O O O O B-parameter.HUMIDITY O O O
+O O O O
+O O O O O B-action.SET O B-object I-object O B-brightness.DECREASE
+O B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.CLOSE O B-object O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O B-action.SET O B-object B-brightness.VALUE O I-object
+O O O O O
+O O O O O O O
+O O O
+O O B-action.SET B-object I-object O B-brightness.INCREASE
+B-action.SET O B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O B-parameter.CO2 O O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O O O B-parameter.TEMPERATURE
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O O O B-parameter.CO2 O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O B-action.SET B-object O B-brightness.INCREASE
+O O O O O O O B-parameter.ALL I-parameter.ALL
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O O O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O O B-parameter.HUMIDITY O
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O O O O O
+O B-parameter.CO2 O O O O O
+O O O O O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O O B-parameter.HUMIDITY O O O
+O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+B-action.SET O B-object O B-brightness.VALUE
+O O O O B-action.SET O B-object B-brightness.INCREASE I-brightness.INCREASE
+O O O B-action.SET O B-parameter O B-temperature
+O O O O B-parameter.HUMIDITY O
+O O O O B-action.SET B-object I-object O B-brightness.VALUE O O
+O B-action.SET B-object O B-brightness.VALUE
+B-action.SWITCH_OFF O B-object O I-action.SWITCH_OFF O
+O B-action.SET O B-object O B-color
+O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.HUMIDITY O O
+O O B-parameter.HUMIDITY O O O O
+O O O O O O O
+O O O O O O B-parameter.CO2 O
+O O O O O O B-parameter.HUMIDITY
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O O O B-parameter.HUMIDITY O O
+B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O O O B-parameter.CO2 O O
+O O O B-action.OPEN O B-object
+O O O B-action.SET B-parameter B-temperature
+O O O O O O O O O
+O B-action.SWITCH_OFF O B-object
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O B-action.SWITCH_OFF O B-object O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SET B-object O B-color I-object
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O O O B-parameter.TEMPERATURE O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O O O O O
+O O B-action.SET B-object I-object O B-brightness.DECREASE
+O B-parameter.ALL I-parameter.ALL O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O B-action.SET B-object B-brightness.DECREASE I-brightness.DECREASE O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O O O O O
+O O O O O O B-parameter.CO2 O O O O
+B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SWITCH_OFF O B-object O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O O O O O O O
+O O O O O B-parameter.HUMIDITY O O O O
+O O O O O O O
+O O O O O O O O B-parameter.CO2 O
+O O O O B-parameter.CO2 O
+O O B-action.SWITCH_ON B-object
+O O O B-action.SET O B-object B-brightness.VALUE O I-object
+O O O B-action.SWITCH_OFF B-object
+B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O B-parameter.HUMIDITY O O O O
+B-action.SET B-object O B-brightness.VALUE O
+O O O B-action.SET B-object O B-brightness.VALUE
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O B-action.SWITCH_ON O B-object
+O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL O
+O O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O B-action.SET B-object O B-brightness.INCREASE
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object O
+O O B-action.SWITCH_ON O B-object
+O O O O O O O
+O B-action.SET B-object I-object O B-brightness.VALUE O I-object O
+O B-action.SET B-object O B-brightness.VALUE
+O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O B-action.SET O B-object O B-color I-object
+O O O O O O O O B-parameter.HUMIDITY O
+O O B-action.SET O B-object O B-brightness.VALUE O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O B-parameter.HUMIDITY O O O
+O O O O O O O O B-parameter.TEMPERATURE O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O O B-parameter.CO2 O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O
+O B-action.SET O B-object I-object O B-brightness.VALUE O I-object O
+B-action.SWITCH_OFF B-object O I-action.SWITCH_OFF
+O B-action.SET O B-object O B-brightness.VALUE O
+B-action.SET O B-object O B-color I-object
+O O O O B-parameter.HUMIDITY O O O O
+O O B-action.SET O B-object O B-brightness.VALUE O
+O O O O B-parameter.TEMPERATURE O O O
+O O O O B-action.SET O B-object I-object B-brightness.DECREASE O
+O O O O O O B-parameter.TEMPERATURE O O O
+O O O O O O
+O O O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O B-action.SET B-object I-object O B-color
+O O B-action.SWITCH_OFF O B-object
+O O B-action.SET B-object I-object O B-brightness.DECREASE
+O O O B-parameter.CO2 O O O O
+O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O O O O O O B-parameter.ALL I-parameter.ALL O
+O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O O O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O O O O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O O
+O O O O B-parameter.CO2 O O O O
+O O O O O O O O
+O O O O B-action.SET B-object I-object O B-brightness.VALUE
+O B-action.SET O B-object I-object B-brightness.INCREASE O
+O B-action.SET O B-object I-object B-brightness.VALUE O O
+O O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O B-action.SET O B-object I-object O B-color O
+O O B-action.SET O B-object I-object O B-color
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O B-action.SET B-object O B-brightness.VALUE
+O O O O B-parameter.TEMPERATURE
+O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SET O B-object I-object B-brightness.VALUE O
+O O O O O O
+O O O O B-parameter.HUMIDITY O
+O O B-action.SET O B-object O B-brightness.VALUE
+O O B-action.SWITCH_ON O B-object
+O O O O O O B-parameter.ALL I-parameter.ALL
+O O
+B-action.SET B-object I-object O B-brightness.VALUE
+B-action.SET O B-object I-object O B-brightness.INCREASE
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O B-action.CLOSE B-object O
+O O O O O O B-parameter.TEMPERATURE O
+B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O B-action.SET B-object O B-color
+O O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.OPEN B-object O
+O O O O O O O O O
+O O O O O O B-parameter.CO2 O O O O
+O O O O B-parameter.HUMIDITY O O O
+O O O O O O O O B-parameter.TEMPERATURE O
+O O O O O B-parameter.TEMPERATURE
+O O O B-parameter.TEMPERATURE O O
+O O B-action.OPEN O B-object
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O B-action.SWITCH_OFF O B-object
+O O O O O O O O
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O B-action.UNMUTE O B-object
+O O B-action.SET B-object I-object B-brightness.INCREASE
+O O O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O O O B-parameter.HUMIDITY O O
+O O O O O O O
+O O O O O O O
+O O O
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O O O O O B-parameter.TEMPERATURE O O O O
+O O O O O O B-parameter.CO2 O O O O O
+O B-action.SET O B-object I-object O B-brightness.INCREASE
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O O O O O O B-parameter.CO2 O
+O O B-action.SET B-parameter O B-temperature O
+O O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O O O O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O O O
+O O O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O O B-action.SET B-object I-object O B-color
+O O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O B-action.SET B-object O B-brightness.VALUE O
+O O O O B-action.SET O B-object O B-brightness.VALUE O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object O
+O O O O B-action.SET B-object O B-color I-object
+O O O O O B-parameter.CO2 O O
+O O B-action.SET B-object B-brightness.INCREASE I-brightness.INCREASE O
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object I-object B-brightness.VALUE O
+O O B-action.SET O B-object I-object O B-color
+O O O O B-parameter.CO2 I-parameter.CO2 O
+O O B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+O O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SWITCH_ON O B-object O
+O O O B-action.SET B-object B-parameter O B-temperature
+O O O O O O O B-parameter.HUMIDITY O O O
+O B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON O
+O O O O O B-parameter.TEMPERATURE O O
+O B-action.SWITCH_OFF B-object
+O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O B-action.SET B-object O B-color O
+O O O O O O O O O
+O O O B-parameter.CO2 O O O O
+O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O B-action.SET B-object O B-brightness.DECREASE
+O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O O
+O O O O B-parameter.ALL I-parameter.ALL
+O B-action.CLOSE O B-object
+O O O O O B-parameter.TEMPERATURE O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O B-action.OPEN O B-object
+O O B-action.SET B-object O O B-brightness.DECREASE
+B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+B-action.SWITCH_OFF O B-object
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+B-action.SET O B-object I-object O O B-brightness.INCREASE O
+B-action.SET B-object O B-color
+O O O O O
+O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O O B-parameter.CO2 O O O O
+O O B-action.SWITCH_OFF O B-object O
+O O O O O B-parameter.CO2 O O O
+O O B-action.SET B-object B-brightness.VALUE O I-object
+O O B-action.SET B-object I-object B-brightness.INCREASE
+O O O O B-parameter.ALL I-parameter.ALL O
+O O B-action.SET O B-parameter O B-temperature O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O O O B-parameter.HUMIDITY O
+O O O B-action.SET B-object I-object B-brightness.INCREASE I-brightness.INCREASE
+O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.CO2 O O
+O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O B-action.MUTE O B-object
+O O O O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+B-action.SWITCH_ON B-object O I-action.SWITCH_ON
+O O B-action.SWITCH_ON O B-object O O
+O O O O O O O O O
+O O O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O O O B-parameter.HUMIDITY O O O O
+B-action.CLOSE O B-object O
+B-action.SET O B-object O B-brightness.VALUE
+O O O O O O B-parameter.CO2 O
+O O O O O O O B-parameter.CO2 O
+O O O O O
+O O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O
+B-action.SWITCH_OFF B-object O O
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O
+O O O B-parameter.HUMIDITY O O O
+O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+B-action.SET O B-object I-object O B-brightness.VALUE I-object
+O O O O O O O O O O
+B-action.SET B-object O B-color I-object
+O O B-action.SET B-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O O O O O
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+B-action.SWITCH_OFF O B-object
+O B-action.SET B-object I-object B-brightness.DECREASE I-brightness.DECREASE
+O O O O O O O O B-parameter.HUMIDITY O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+B-action.SET O B-object I-object O B-brightness.INCREASE
+O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O B-parameter.TEMPERATURE O O O
+O O O O
+O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O B-parameter.CO2 O O
+O O O O O B-parameter.HUMIDITY O O
+O O B-action.SWITCH_ON O B-object O
+O O O O B-action.SET B-object B-brightness.DECREASE
+O O O O O O
+O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O O B-action.SET O B-object O B-brightness.INCREASE O
+O O O O O O B-parameter.TEMPERATURE O O
+O O O O O O B-parameter.CO2 O O
+O O O O B-action.SET O B-object O B-brightness.VALUE O
+O B-action.SWITCH_ON B-object I-action.SWITCH_ON
+O O O O B-action.SET O B-object O B-color I-object
+O B-action.SET O B-object O B-color I-object
+O O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O O O O O
+B-action.SET O B-object B-brightness.VALUE O O
+O O B-action.SET O B-object I-object B-brightness.INCREASE I-brightness.INCREASE
+O O O O O B-parameter.ALL I-parameter.ALL O
+O O O O O B-parameter.ALL I-parameter.ALL
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object
+O B-action.SET B-object O B-color I-object O
+O O O B-action.SWITCH_OFF O B-object
+O O B-action.SET B-object O B-brightness.VALUE
+O O O O O B-parameter.TEMPERATURE O O O
+O O B-action.MUTE B-object O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O B-parameter.HUMIDITY O O O O O O
+O O B-action.SWITCH_ON O B-object O
+O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL
+O O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object B-brightness.VALUE I-object
+B-action.SET O B-object O B-color I-object
+O O O O O O B-parameter.TEMPERATURE
+O O B-action.SET B-object I-object O B-brightness.VALUE
+B-action.SWITCH_ON B-object O O
+O O O O O B-parameter.CO2 O O
+O O O B-parameter.CO2 O O
+O O O O B-parameter.TEMPERATURE O
+O O B-action.SWITCH_OFF O B-object
+O O O O O O O O O O
+O O B-action.SET O B-object O B-color I-object
+O O O O O O
+O O B-action.OPEN O B-object
+O B-action.OPEN B-object
+O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON
+O O O O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O O O O O O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O O
+O O B-action.SET O B-parameter O B-temperature O O
+B-action.SET O B-parameter B-temperature O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
+O O O O O O O O O
+O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O B-action.SET O B-object B-brightness.INCREASE I-brightness.INCREASE
+B-action.SET O B-object O B-brightness.VALUE
+O O B-action.OPEN B-object
+B-action.SET B-parameter B-temperature O O
+O O O O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+B-action.SET O B-object O B-color
+O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SET B-object B-color
+O O O O
+O O O O O O O O
+O O O B-parameter.HUMIDITY O O O O
+O O B-parameter.TEMPERATURE O
+O O O O O O O B-parameter.CO2 O O O O
+O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O O O O O O O O
+O O O O B-action.SET O B-object B-brightness.VALUE O I-object O
+O O O O O O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O O
+O O B-action.SET B-object O B-brightness.VALUE O
+B-action.SET B-object O B-brightness.VALUE O
+O O O O O O
+O O O O O O O O O O
+O O O O B-parameter.HUMIDITY O O
+O O B-action.SWITCH_OFF O B-object
+O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O O O O B-parameter.TEMPERATURE
+O O O O O O O B-parameter.CO2 O O O
+O O B-action.SWITCH_OFF O B-object
+O O O O O O
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O B-action.SET B-object B-brightness.INCREASE I-brightness.INCREASE
+O O B-action.SET B-object O B-brightness.VALUE O
+O O O O O B-parameter.CO2 O O
+O O O B-parameter.HUMIDITY O O O O
+O O
+O O O O
+O O B-action.SET B-object I-object B-color
+O O B-action.SET O B-object O B-brightness.INCREASE O
+O O O B-action.SWITCH_OFF O B-object
+O O O O O
+B-action.UNMUTE O B-object O
+O O O O O O O O B-parameter.CO2 O O O O
+O O O O B-parameter.ALL I-parameter.ALL O
+B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O B-action.OPEN O B-object
+O O O
+O O O O
+O O B-action.SET B-object O B-brightness.VALUE O I-object
+O O B-action.SWITCH_OFF O B-object O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SWITCH_OFF B-object I-action.SWITCH_OFF
+B-action.CLOSE B-object
+O O B-action.SET B-object B-brightness.INCREASE
+O B-action.SET B-object I-object O B-brightness.INCREASE
+O O O O O
+B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+O O O O
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O B-action.CLOSE B-object
+O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF O
+O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SWITCH_ON I-action.SWITCH_ON O B-object O
+O O B-action.SET B-object I-object O O B-brightness.INCREASE O
+O O O O O O O O O O O
+B-action.SET B-object O B-brightness.VALUE O O
+O O
+O O O O O
+O O B-action.SWITCH_ON O B-object I-action.SWITCH_ON
+B-action.SET B-object O B-color I-object
+O O O O O B-parameter.HUMIDITY O O O
+O O O O B-action.SET O B-object I-object O B-brightness.VALUE O O
+O O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O
+O O O B-action.SET O B-object B-brightness.DECREASE I-brightness.DECREASE
+O O B-action.SET O B-object O B-color
+O O O B-action.MUTE O B-object
+O O O B-action.SET B-object I-object O B-color
+O O O O O O B-parameter.TEMPERATURE O
+B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O O O
+O O O O B-action.SET B-object I-object O B-brightness.VALUE O
+O O O O O B-action.SET O B-object O B-brightness.VALUE O
+O O B-action.SET B-object O B-color I-object O
+O O O O O O B-parameter.HUMIDITY O O O O
+O O O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O O O O B-parameter.TEMPERATURE O O O O
+O B-action.SET B-object I-object O B-brightness.VALUE
+O B-action.SET B-object O B-color
+O O O O O B-parameter.CO2 O O O O
+O O O O O O O B-parameter.HUMIDITY O O O
+O O B-action.SET B-object I-object B-brightness.INCREASE
+O O O O O B-parameter.HUMIDITY O O O
+O O O O O B-action.SET B-object O B-brightness.VALUE
+O O B-action.SET B-object B-brightness.INCREASE
+O O O O O B-action.SET B-object I-object O B-color
+O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object O
+O O O O O O O B-parameter.ALL I-parameter.ALL
+O O B-action.SET B-object O B-brightness.VALUE
+O O B-action.SWITCH_ON I-action.SWITCH_ON B-object
+O O O O B-parameter.ALL I-parameter.ALL
+O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+B-action.UNMUTE B-object
+O O O O O O
+O O O O B-action.SET O B-object I-object B-brightness.DECREASE
+O B-action.OPEN B-object
+O O O O B-parameter.HUMIDITY O O
+O O B-action.SET B-object I-object O B-color
+O O O O O O O B-parameter.HUMIDITY O O O
+O O O O B-parameter.CO2 I-parameter.CO2 O O
+B-parameter.CO2 I-parameter.CO2 O O O
+O O O O O
+O O B-action.SET B-object O B-color O
+O B-action.SET B-object O B-color
+B-action.SET O B-parameter O B-temperature O
+O O B-parameter.ALL I-parameter.ALL O O I-parameter.ALL
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O O O B-parameter.CO2 O O O
+O O B-parameter.HUMIDITY O
+O O O B-action.SET O B-object O B-brightness.VALUE
+O O O O O O
+O O O O O O B-parameter.CO2 O O O O O
+O O O O B-parameter.HUMIDITY O O
+O O B-action.SET O B-parameter B-temperature O O
+B-action.SWITCH_ON O B-object O O
+O O O B-action.SET B-object I-object O B-brightness.VALUE
+B-action.SWITCH_ON O B-object I-action.SWITCH_ON O
+O O B-action.SET B-object O B-brightness.INCREASE
+O O B-action.SET O B-object O B-brightness.VALUE
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+B-action.SWITCH_OFF B-object O
+O B-action.SET B-object O B-color O
+O O O B-parameter.ALL I-parameter.ALL
+O O O B-parameter.ALL I-parameter.ALL
+B-action.SWITCH_OFF O B-object
+O O O O O O O B-parameter.CO2 O O O O
+O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O O O B-parameter.HUMIDITY O O O O
+O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O O O O O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O
+O O B-action.SET B-object O B-brightness.VALUE O
+O B-action.SET B-object I-object O B-brightness.VALUE O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O B-parameter.CO2 I-parameter.CO2 O O O
+O O O O O B-parameter.CO2 O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O B-action.SWITCH_OFF O B-object I-action.SWITCH_OFF
+O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O O B-action.SET B-object I-object O B-color
+O O O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O O B-action.SWITCH_ON O B-object
+O O O O O O O
+O O O O O O B-parameter.CO2 O O
+O B-action.SET B-object I-object O B-brightness.DECREASE O
+B-action.SWITCH_OFF I-action.SWITCH_OFF B-object
+O O O O O O O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O
+O O B-action.SET B-object O B-color I-object
+O O B-action.SET O B-object I-object O B-brightness.VALUE
+O O O O O O O O O O O
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF B-object O
+O B-action.SET O B-object I-object B-brightness.INCREASE
+O O O O O B-parameter.HUMIDITY O
+O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O
+O B-action.SET B-object I-object O B-brightness.VALUE
+O O B-action.SET O B-object I-object B-brightness.VALUE O I-object
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O
+O B-action.SET O B-object O B-brightness.DECREASE
+O B-action.SET B-object I-object B-brightness.VALUE O
+O O O O O O O O B-parameter.ALL I-parameter.ALL O I-parameter.ALL O O O
+O B-action.SET O B-object I-object O O B-brightness.DECREASE
+O O B-action.CLOSE B-object
+O O O O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.HUMIDITY O
+O O O O O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O
+O O O O O O O O B-parameter.TEMPERATURE O
+O O O O O B-parameter.HUMIDITY O
+O O B-action.SET O B-object I-object O B-brightness.VALUE O I-object
+O O O O O
+B-action.SWITCH_ON B-object I-action.SWITCH_ON O
+O O O O O
+O O O O B-parameter.TEMPERATURE
+O O O B-action.SWITCH_ON O B-object O I-action.SWITCH_ON
+O O O O O O B-parameter.TEMPERATURE
+O O O O O O O
+O O O O O O B-parameter.CO2 I-parameter.CO2 O
+B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O B-action.SWITCH_OFF I-action.SWITCH_OFF O B-object
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O O
+O O B-action.SET O B-object I-object O B-color
+O O O O O O O O O O
+O B-action.SET B-object I-object O B-brightness.VALUE
+O O O O O B-parameter.CO2 I-parameter.CO2 O O O O O
