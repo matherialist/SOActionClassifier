@@ -20,20 +20,30 @@ class ActionClassifier:
 
     def make_prediction(self, utterance):
         intent_slots = self.__predict(utterance)
-        response = self.__construct_phrase(intent_slots)
+        if intent_slots['intent'] == 'no_intent':
+            response = "i don't understand you"
+        else:
+            response = self.__construct_phrase(intent_slots)
         return {"intent": intent_slots, "response": response}
 
     def __construct_phrase(self, intent_slots):
-        res = 'roger, i will '
-        words = {}
+        commands = {'action.SWITCH_ON': 'switch on', 'action.SWITCH_OFF': 'switch off', 'action.SET': 'set',
+                    'action.OPEN': 'open', 'action.CLOSE': 'close', 'action.MUTE': 'mute', 'action.UNMUTE': 'unmute',
+                    'brightness.INCREASE': 'brightness', 'brightness.DECREASE': 'brightness',
+                    'brightness.VALUE': 'brightness', 'color': 'color', 'temperature': 'temperature'}
+        res = 'okay, i will '
+        words = []
+        print(intent_slots)
         for slot in intent_slots['slots']:
-            words[slot['name']] = slot['value']
-        res += words['action']
-        res += ' the ' + words['object']
-        try:
-            res += ' to ' + words['state'] + ' degrees'
-        except KeyError:
-            pass
+            if slot['name'] in commands.keys():
+                words.append(commands[slot['name']])
+        print(words)
+        if intent_slots['intent']['name'] == 'air':
+            res = 'the air status follows'
+        else:
+            res += words[0] + ' the ' + intent_slots['intent']['name']
+            if len(words) > 1:
+                res += ' ' + words[1]
         return res
 
     def __predict(self, utterance):
