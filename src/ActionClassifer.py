@@ -33,11 +33,9 @@ class ActionClassifier:
                     'brightness.VALUE': 'brightness', 'color': 'color', 'temperature': 'temperature'}
         res = 'okay, i will '
         words = []
-        print(intent_slots)
         for slot in intent_slots['slots']:
             if slot['name'] in commands.keys():
                 words.append(commands[slot['name']])
-        print(words)
         if intent_slots['intent']['name'] == 'air':
             res = 'the air status follows'
         else:
