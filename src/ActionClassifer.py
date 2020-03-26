@@ -20,7 +20,7 @@ class ActionClassifier:
 
     def make_prediction(self, utterance):
         intent_slots = self.__predict(utterance)
-        if intent_slots['intent'] == 'no_intent':
+        if intent_slots['intent']['name'] == 'no_intent':
             response = "i don't understand you"
         else:
             response = self.__construct_phrase(intent_slots)
@@ -39,7 +39,8 @@ class ActionClassifier:
         if intent_slots['intent']['name'] == 'air':
             res = 'the air status follows'
         else:
-            res += words[0] + ' the ' + intent_slots['intent']['name']
+            if len(words) > 0:
+                res += words[0] + ' the ' + intent_slots['intent']['name']
             if len(words) > 1:
                 res += ' ' + words[1]
         return res
