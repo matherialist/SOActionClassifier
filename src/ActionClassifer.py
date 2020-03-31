@@ -27,10 +27,12 @@ class ActionClassifier:
         return {"intent": intent_slots, "response": response}
 
     def __construct_phrase(self, intent_slots):
-        commands = {'action.SWITCH_ON': 'switch on', 'action.SWITCH_OFF': 'switch off', 'action.SET': 'set',
-                    'action.OPEN': 'open', 'action.CLOSE': 'close', 'action.MUTE': 'mute', 'action.UNMUTE': 'unmute',
-                    'brightness.INCREASE': 'brightness', 'brightness.DECREASE': 'brightness',
-                    'brightness.VALUE': 'brightness', 'color': 'color', 'temperature': 'temperature'}
+        commands = {'action.switch_on': 'switch on', 'action.switch_off': 'switch off', 'action.set': 'set',
+                    'action.open': 'open', 'action.close': 'close', 'action.mute': 'mute', 'action.unmute': 'unmute',
+                    'brightness.increase': 'brightness', 'brightness.decrease': 'brightness',
+                    'brightness.value': 'brightness', 'color': 'color', 'temperature': 'temperature',
+                    'action.increase_temp': 'increase temperature', 'action.decrease_temp': 'decrease temperature',
+                    'increase': 'increase', 'decrease': 'decrease'}
         res = 'okay, i will '
         words = []
         for slot in intent_slots['slots']:
@@ -40,7 +42,12 @@ class ActionClassifier:
             res = 'the air status follows'
         else:
             if len(words) > 0:
-                res += words[0] + ' the ' + intent_slots['intent']['name']
+                intent = intent_slots['intent']['name']
+                if intent == 'implicit_light':
+                    intent = 'brightness'
+                if intent == 'implicit_conditioner':
+                    intent = 'temperature'
+                res += words[0] + ' the ' + intent
             if len(words) > 1:
                 res += ' ' + words[1]
         return res
