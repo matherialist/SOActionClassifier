@@ -32,7 +32,8 @@ class ActionClassifier:
                     'brightness.increase': 'brightness', 'brightness.decrease': 'brightness',
                     'brightness.value': 'brightness', 'color': 'color', 'temperature': 'temperature',
                     'action.increase_temp': 'increase temperature', 'action.decrease_temp': 'decrease temperature',
-                    'increase': 'increase', 'decrease': 'decrease'}
+                    'increase': 'increase', 'decrease': 'decrease', 'sound.decrease': 'sound',
+                    'sound.increase': 'sound', 'sound.value': 'sound'}
         res = 'okay, i will '
         words = []
         for slot in intent_slots['slots']:
