@@ -24,8 +24,9 @@ def read_goo(dataset_folder_path):
     assert len(text_arr) == len(tags_arr) == len(labels)
     return text_arr, tags_arr, labels
 
+
 load_folder_path = 'files'
-data_folder_path = 'data/SH/test'
+data_folder_path = 'data/test'
 batch_size = 128
 
 

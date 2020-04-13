@@ -26,7 +26,7 @@ def read_goo(dataset_folder_path):
     return text_arr, tags_arr, labels
 
 
-data_folder_path = 'data/SH/train'
+data_folder_path = 'data/train'
 save_folder_path = 'files'
 epochs = 1
 batch_size = 256
@@ -111,6 +111,5 @@ with open(os.path.join(save_folder_path, 'tags_vectorizer.pkl'), 'wb') as handle
     pickle.dump(tags_vectorizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 with open(os.path.join(save_folder_path, 'intents_label_encoder.pkl'), 'wb') as handle:
     pickle.dump(intents_label_encoder, handle, protocol=pickle.HIGHEST_PROTOCOL)
-
 
 tf.compat.v1.reset_default_graph()
