@@ -1,10 +1,8 @@
-"""
-Original implementation: https://github.com/MahmoudWahdan/dialog-nlu
-"""
-
 import json
+import logging
 import numpy as np
 import os
+import sys
 import tensorflow as tf
 import tensorflow_hub as hub
 import matplotlib.pyplot as plt
@@ -308,6 +306,7 @@ class JointBertModel(Model):
 
     @staticmethod
     def train_model(train_config_path, sess):
+        logging.basicConfig(stream=sys.stdout, format='%(message)s', level=logging.WARNING)
         with open(os.path.join(train_config_path, 'train_config.json'), 'r') as json_file:
             train_config = json.load(json_file)
         data_folder_path = os.path.join(train_config['data_folder_path'], 'train')
@@ -317,28 +316,28 @@ class JointBertModel(Model):
         num_bert_fine_tune_layers = train_config['num_bert_fine_tune_layers']
         model_hub_path = train_config['model_hub_path']
 
-        print('read data ...')
+        logging.log(logging.WARNING, 'Reading data ...')
         text_arr, tags_arr, intents = JointBertModel.read_goo(data_folder_path)
 
-        print('vectorize data ...')
+        logging.log(logging.WARNING, 'Vectorize data ...')
         bert_vectorizer = BERTVectorizer(sess, model_hub_path)
         input_ids, input_mask, segment_ids, valid_positions, sequence_lengths = bert_vectorizer.transform(text_arr)
 
-        print('vectorize tags ...')
+        logging.log(logging.WARNING, 'Vectorize tags ...')
         tags_vectorizer = TagsVectorizer()
         tags_vectorizer.fit(tags_arr)
 
         tags = tags_vectorizer.transform(tags_arr, valid_positions)
         slots_num = len(tags_vectorizer.label_encoder.classes_)
 
-        print('encode labels ...')
+        logging.log(logging.WARNING, 'Encoding labels ...')
         intents_label_encoder = LabelEncoder()
         intents = intents_label_encoder.fit_transform(intents).astype(np.int32)
         intents_num = len(intents_label_encoder.classes_)
 
         model = JointBertModel(slots_num, intents_num, model_hub_path, sess, num_bert_fine_tune_layers)
 
-        print('training model ...')
+        logging.log(logging.WARNING, 'Training model ...')
         X = np.concatenate((input_ids, input_mask, segment_ids, valid_positions, tags), axis=1)
         Y = intents
         split_width = input_ids.shape[1]
@@ -364,7 +363,7 @@ class JointBertModel(Model):
                 X_train = (X_train[0], X_train[1], X_train[2], model.prepare_valid_positions(X_train[3]))
                 X_val = (X_val[0], X_val[1], X_val[2], model.prepare_valid_positions(X_val[3]))
 
-                print('Epoch %i/%i' % (i, epochs))
+                logging.log(logging.WARNING, 'Epoch %i/%i' % (i, epochs))
                 hist = model.fit(X_train, Y_train, validation_data=(X_val, Y_val), epochs=1, batch_size=batch_size)
                 if history:
                     history = {key: history[key] + hist.history[key] for key in hist.history}
@@ -376,10 +375,10 @@ class JointBertModel(Model):
         plt.show()
         plt.close()
 
-        print('Saving ..')
+        logging.log(logging.WARNING, 'Saving model ..')
         if not os.path.exists(save_folder_path):
             os.makedirs(save_folder_path)
-            print('Folder `%s` created' % save_folder_path)
+            logging.info('Folder `%s` created' % save_folder_path)
         model.save_model(save_folder_path)
         with open(os.path.join(save_folder_path, 'tags_vectorizer.pkl'), 'wb') as handle:
             pickle.dump(tags_vectorizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
@@ -400,9 +399,10 @@ class JointBertModel(Model):
 
         bert_vectorizer = BERTVectorizer(sess, model_hub_path)
 
-        print('Loading models ...')
+        logging.log(logging.WARNING, 'Loading model ...')
         if not os.path.exists(load_folder_path):
-            print('Folder `%s` not exist' % load_folder_path)
+            logging.warning('Folder `%s` not exist' % load_folder_path)
+            return
 
         with open(os.path.join(load_folder_path, 'tags_vectorizer.pkl'), 'rb') as handle:
             tags_vectorizer = pickle.load(handle)
@@ -420,8 +420,7 @@ class JointBertModel(Model):
         f1_score = metrics.f1_score(flatten(gold_tags), flatten(predicted_tags), average='micro')
         acc = metrics.accuracy_score(intents, predicted_intents)
 
-        print('==== Evaluation ====')
-        print(metrics.classification_report(flatten(gold_tags), flatten(predicted_tags), digits=3))
-        print('Slot f1_score = %f' % f1_score)
-        print('Intent accuracy = %f' % acc)
+        logging.log(logging.WARNING, metrics.classification_report(flatten(gold_tags), flatten(predicted_tags), digits=3))
+        logging.log(logging.WARNING, 'Slot f1_score = %f' % f1_score)
+        logging.log(logging.WARNING, 'Intent accuracy = %f' % acc)
         return f1_score, acc
