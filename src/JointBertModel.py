@@ -128,7 +128,7 @@ class TagsVectorizer:
 class AlbertLayer(tf.keras.layers.Layer):
 
     def __init__(self, fine_tune=True, pooling='first',
-                 albert_path="https://tfhub.dev/google/albert_base/1", **kwargs, ):
+                 albert_path="https://tfhub.dev/google/albert_base/1", **kwargs):
         self.fine_tune = fine_tune
         self.output_size = 768
         self.pooling = pooling
@@ -150,8 +150,7 @@ class AlbertLayer(tf.keras.layers.Layer):
 
             elif self.pooling == 'mean':
                 trainable_vars = [var for var in trainable_vars
-                                  if not "/cls/" in var.name and not "/pooler/" in var.name
-                                  ]
+                                  if not "/cls/" in var.name and not "/pooler/" in var.name]
                 trainable_layers = []
             else:
                 raise NameError(f"Undefined pooling type (must be either first or mean, but is {self.pooling}")
@@ -180,7 +179,7 @@ class AlbertLayer(tf.keras.layers.Layer):
         return result['pooled_output'], result['sequence_output']
 
     def compute_output_shape(self, input_shape):
-        return (input_shape[0], input_shape[1], self.output_size)
+        return input_shape[0], input_shape[1], self.output_size
 
     def get_config(self):
         config = super().get_config().copy()
@@ -277,7 +276,7 @@ class JointBertModel(Model):
         self.save(os.path.join(model_path, 'joint_bert_model.h5'))
 
     @staticmethod
-    def load(load_folder_path, sess):
+    def load_model(load_folder_path, sess):
         with open(os.path.join(load_folder_path, 'params.json'), 'r') as json_file:
             model_params = json.load(json_file)
 
@@ -375,7 +374,7 @@ class JointBertModel(Model):
         plt.show()
         plt.close()
 
-        logging.log(logging.WARNING, 'Saving model ..')
+        logging.log(logging.WARNING, 'Saving model ...')
         if not os.path.exists(save_folder_path):
             os.makedirs(save_folder_path)
             logging.info('Folder `%s` created' % save_folder_path)
@@ -420,7 +419,8 @@ class JointBertModel(Model):
         f1_score = metrics.f1_score(flatten(gold_tags), flatten(predicted_tags), average='micro')
         acc = metrics.accuracy_score(intents, predicted_intents)
 
-        logging.log(logging.WARNING, metrics.classification_report(flatten(gold_tags), flatten(predicted_tags), digits=3))
+        logging.log(logging.WARNING, metrics.classification_report(flatten(gold_tags),
+                                                                   flatten(predicted_tags), digits=3))
         logging.log(logging.WARNING, 'Slot f1_score = %f' % f1_score)
         logging.log(logging.WARNING, 'Intent accuracy = %f' % acc)
         return f1_score, acc

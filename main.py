@@ -3,6 +3,7 @@ from tensorflow.python.keras.backend import set_session
 from os import path
 from flask import Flask, request
 from src.ActionClassifer import ActionClassifier
+from src.JointBertModel import JointBertModel
 
 app = Flask(__name__)
 
@@ -22,6 +23,16 @@ def get_intent():
         data = request.get_json()
         result = ac.make_prediction(data['text'])
     return result
+
+
+@app.route('/train', methods=['POST'])
+def train():
+    with graph.as_default():
+        set_session(sess)
+        #data = request.get_json()
+        model = JointBertModel.train(config_path, sess)
+        f1_score, acc = model.evaluate('data', sess)
+    return {"f1_score": f1_score, "acc": acc}
 
 
 if __name__ == '__main__':
