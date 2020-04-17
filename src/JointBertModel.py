@@ -285,9 +285,9 @@ class JointBertModel(Model):
         bert_hub_path = model_params['bert_hub_path']
         num_bert_fine_tune_layers = model_params['num_bert_fine_tune_layers']
 
-        new_model = JointBertModel(slots_num, intents_num, bert_hub_path, sess, num_bert_fine_tune_layers)
-        new_model.model.load_weights(os.path.join(load_folder_path, 'joint_bert_model.h5'))
-        return new_model
+        model = JointBertModel(slots_num, intents_num, bert_hub_path, sess, num_bert_fine_tune_layers)
+        model.load_weights(os.path.join(load_folder_path, 'joint_bert_model.h5'))
+        return model
 
     @staticmethod
     def read_goo(dataset_folder_path):

@@ -25,14 +25,13 @@ def get_intent():
     return result
 
 
-@app.route('/train', methods=['POST'])
-def train():
-    with graph.as_default():
-        set_session(sess)
-        #data = request.get_json()
-        model = JointBertModel.train(config_path, sess)
-        f1_score, acc = model.evaluate('data', sess)
-    return {"f1_score": f1_score, "acc": acc}
+# @app.route('/train', methods=['POST'])
+# def train():
+#     with graph.as_default():
+#         set_session(sess)
+#         model = JointBertModel.train(config_path, sess)
+#         f1_score, acc = model.evaluate('data', sess)
+#     return {"f1_score": f1_score, "acc": acc}
 
 
 if __name__ == '__main__':

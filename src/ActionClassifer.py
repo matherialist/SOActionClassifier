@@ -16,7 +16,7 @@ class ActionClassifier:
             self.tags_vectorizer = pickle.load(handle)
         with open(os.path.join(load_folder_path, 'intents_label_encoder.pkl'), 'rb') as handle:
             self.intents_label_encoder = pickle.load(handle)
-        self.model = JointBertModel.load(load_folder_path, sess)
+        self.model = JointBertModel.load_model(load_folder_path, sess)
 
     def make_prediction(self, utterance):
         intent_slots = self.__predict(utterance)
