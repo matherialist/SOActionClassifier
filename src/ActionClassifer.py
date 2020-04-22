@@ -48,7 +48,13 @@ class ActionClassifier:
                     intent = 'brightness'
                 if intent == 'implicit_conditioner':
                     intent = 'temperature'
-                res += words[0] + ' the ' + intent
+                if intent == 'light':
+                    apropriate_slots = ['switch on', 'switch off', 'set', 'brightness', 'color']
+                    words = [word for word in words if word in apropriate_slots]
+                if intent == 'conditioner' and ('increase temperature' in words or 'decrease temperature' in words):
+                    res += words[0]
+                else:
+                    res += words[0] + ' the ' + intent
             if len(words) > 1:
                 res += ' ' + words[1]
         return res
@@ -87,3 +93,83 @@ class ActionClassifier:
                 else:
                     slots[name] = [i]
         return slots
+
+    def __generate_command(self, intent_slots):
+        command = {}
+        intent = intent_slots['intent']['name']
+        slots = intent_slots['slots']
+        command['device'] = intent
+        # light
+        if intent == 'light':
+            for slot in slots:
+                if slot['name'] in ['action.switch_on', 'action.switch_off', 'action.set']:
+                    command['action'] = slot['name'].split('.')[1]
+                if slot['name'] in ['brightness.increase', 'brightness.decrease']:
+                    command['action'] = slot['name'].split('.')[1]
+                    command['parameter'] = slot['name'].split('.')[0]
+                if slot['name'] == 'brightness.value':
+                    command['parameter'] = slot['name'].split('.')[0]
+                    command['value'] = slot['value']
+                if slot['name'] == 'color':
+                    command['parameter'] = 'color'
+                    command['value'] = slot['value']
+
+        # implicit_light
+        if intent == 'implicit_light':
+            for slot in slots:
+                if slot['name'] in ['increase', 'decrease']:
+                    command['action'] = slot['name']
+                    command['parameter'] = 'brightness'
+                    command['value'] = 'default'
+
+        # conditioner
+        if intent == 'conditioner':
+            for slot in slots:
+                if slot['name'] in ['action.switch_on', 'action.switch_off', 'action.set']:
+                    command['action'] = slot['name'].split('.')[1]
+                if slot['name'] == 'action.set':
+                    command['action'] = 'set'
+                    command['parameter'] = 'temperature'
+                if slot['name'] in ['action.increase_temp', 'action.decrease_temp']:
+                    command['action'] = slot['name'].split('.')[1].split('_')[0]
+                    command['parameter'] = 'temperature'
+                if slot['name'] == 'temperature':
+                    command['parameter'] = 'temperature'
+                    command['value'] = slot['value']
+
+        # implicit_conditioner
+        if intent == 'implicit_conditioner':
+            for slot in slots:
+                if slot['name'] in ['increase', 'decrease']:
+                    command['action'] = slot['name']
+                    command['parameter'] = 'temperature'
+                    command['value'] = 'default'
+
+        # curtains
+        if intent == 'curtains':
+            for slot in slots:
+                if slot['name'] in ['open', 'close']:
+                    command['action'] = slot['name']
+
+        # tv
+        if intent == 'tv':
+            for slot in slots:
+                if slot['name'] in ['action.switch_on', 'action.switch_off', 'action.set']:
+                    command['action'] = slot['name'].split('.')[1]
+                if slot['name'] in ['action.mute', 'action.unmute']:
+                    command['action'] = slot['name'].split('.')[1]
+                if slot['name'] in ['sound.increase', 'sound.decrease']:
+                    command['action'] = slot['name'].split('.')[1]
+                    command['parameter'] = slot['name'].split('.')[0]
+                if slot['name'] == 'sound.value':
+                    command['parameter'] = 'sound'
+                    command['value'] = slot['value']
+
+        # air
+        if intent == 'air':
+            for slot in slots:
+                if slot['name'] in ['parameter.temperature', 'parameter.humidity', 'parameter.CO2', 'parameter.all']:
+                    command['action'] = 'get_info'
+                    command['parameter'] = slot['name'].split('.')[1]
+
+        return command
