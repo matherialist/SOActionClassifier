@@ -19,16 +19,16 @@ class ActionClassifier:
         self.model = JointBertModel.load_model(load_folder_path, sess)
 
     def make_prediction(self, utterance):
-        intent_slots = self.__predict(utterance)
+        intent_slots = self._predict(utterance)
         if intent_slots['intent']['name'] == 'no_intent':
             command = None
             response = "i don't understand you"
         else:
-            command = self.__get_command(intent_slots)
-            response = self.__get_phrase(command)
+            command = self._get_command(intent_slots)
+            response = self._get_phrase(command)
         return {'command': command, 'response': response}
 
-    def __get_phrase(self, command):
+    def _get_phrase(self, command):
         if command is None:
             return "i don't understand you"
         device, action, parameter = command['device'], command['action'], command['parameter']
@@ -42,13 +42,15 @@ class ActionClassifier:
                 phrase += 'parameters follow'
             else:
                 phrase += parameter + ' is'
+        elif device == 'timer':
+            phrase = 'okay, i will {} the {}'.format(action, device)
         elif action in ['switch on', 'switch off', 'open', 'close', 'mute', 'unmute']:
             phrase = 'okay, i will {} the {}'.format(action, device)
         else:
             phrase = 'okay, i will {} the {} {}'.format(action, device, parameter)
         return phrase
 
-    def __predict(self, utterance):
+    def _predict(self, utterance):
         tokens = utterance.split()
         input_ids, input_mask, segment_ids, valid_positions, data_sequence_lengths = \
             self.bert_vectorizer.transform([utterance])
@@ -56,7 +58,7 @@ class ActionClassifier:
             [input_ids, input_mask, segment_ids, valid_positions],
             self.tags_vectorizer, self.intents_label_encoder, remove_start_end=True,
             include_intent_prob=True)
-        slots = self.__fill_slots(predicted_tags[0])
+        slots = self._fill_slots(predicted_tags[0])
         slots = [{'name': name, 'value': ' '.join([tokens[i] for i in slots[name]])} for name in slots.keys()]
         predictions = {
             'intent': {
@@ -67,7 +69,7 @@ class ActionClassifier:
         }
         return predictions
 
-    def __fill_slots(self, slots_arr, no_class_tag='O', begin_prefix='B-', in_prefix='I-'):
+    def _fill_slots(self, slots_arr, no_class_tag='O', begin_prefix='B-', in_prefix='I-'):
         slots = {}
         for i, slot in enumerate(slots_arr):
             if slot == no_class_tag:
@@ -83,7 +85,7 @@ class ActionClassifier:
                     slots[name] = [i]
         return slots
 
-    def __get_command(self, intent_slots):
+    def _get_command(self, intent_slots):
         command = {'device': None, 'action': None, 'parameter': None, 'value': None}
         intent = intent_slots['intent']['name']
         slots = intent_slots['slots']
@@ -163,12 +165,50 @@ class ActionClassifier:
                     command['action'] = 'get_info'
                     command['parameter'] = slot['name'].split('.')[1]
 
+        # timer
+        if intent == 'timer':
+            time = {}
+            for slot in slots:
+                if slot['name'] == 'action.set':
+                    command['action'] = 'set'
+                elif slot['name'] == 'minutes':
+                    time['minutes'] = slot['value']
+                elif slot['name'] == 'seconds':
+                    time['seconds'] = slot['value']
+            if time:
+                command['value'] = time
+            else:
+                command = None
+
+        # reminder
+        if intent == 'reminder':
+            time = {}
+            for slot in slots:
+                if slot['name'] == 'action.set':
+                    command['action'] = 'set'
+                    command['parameter'] = 'time'
+                elif slot['name'] == 'day':
+                    time['day'] = slot['value']
+                elif slot['name'] == 'hours':
+                    time['hours'] = slot['value']
+                elif slot['name'] == 'minutes':
+                    time['minutes'] = slot['value']
+                elif slot['name'] == 'seconds':
+                    time['seconds'] = slot['value']
+                elif slot['name'] == 'message':
+                    command['value']['message'] = slot['value']
+            if time:
+                command['value']['time'] = time
+            else:
+                command = None
+
         # Change string numbers to integer
         str_numbers = {'half': 50, 'third': 33, 'quarter': 25, 'fourth': 25, 'fifth': 20,
                        'one tenth': 10, 'one second': 50, 'one third': 33, 'one fourth': 25,
                        'one fifth': 20, 'two thirds': 66, 'two fifths': 40, 'three quarters': 75,
                        'three fifths': 60, 'four fifths': 80}
-        if command['value'] and command['parameter'] != 'color':
+
+        if command['value'] and command['parameter'] != 'color' and command['device'] != 'timer':
             if command['value'] in str_numbers.keys():
                 command['value'] = str_numbers[command['value']]
             elif command['value'].isalpha():
