@@ -7,7 +7,7 @@ from src.JointBertModel import JointBertModel
 
 app = Flask(__name__)
 
-config_relative_path = "files"
+config_relative_path = 'files'
 config_path = path.join(path.dirname(__file__), config_relative_path)
 
 graph = tf.compat.v1.get_default_graph()
@@ -21,7 +21,14 @@ def get_intent():
     with graph.as_default():
         set_session(sess)
         data = request.get_json()
+        address = request.remote_addr
         result = ac.make_prediction(data['text'])
+        # if result['command']['device'] == 'timer':
+        #     tr = TimerReminder()
+        #     tr.set_timer(result['command']['value'], address)
+        # elif result['command']['device'] == 'reminder':
+        #     tr = TimerReminder()
+        #     tr.set_reminder(result['command']['value'], address, result['command']['value'])
     return result
 
 
