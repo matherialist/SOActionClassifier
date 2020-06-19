@@ -14,27 +14,30 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn import metrics
 from sklearn.model_selection import StratifiedKFold
 from plot_keras_history import plot_history
-from src.AlbertTokenization import FullTokenizer
+from src.BertTokenization import FullTokenizer as bert_tokenizer
+from src.AlbertTokenization import FullTokenizer as albert_tokenizer
 
 
 class BERTVectorizer:
 
-    def __init__(self, sess, bert_model_hub_path="https://tfhub.dev/google/albert_base/1"):
-        self.sess = sess
+    def __init__(self, is_bert, bert_model_hub_path):
+        self.is_bert = is_bert
         self.bert_model_hub_path = bert_model_hub_path
-        self.create_tokenizer_from_hub_module()
+        self.create_tokenizer_from_hub_module(is_bert=is_bert)
 
-    def create_tokenizer_from_hub_module(self):
+    def create_tokenizer_from_hub_module(self, is_bert):
         """Get the vocab file and casing info from the Hub module."""
-        bert_module = hub.Module(self.bert_model_hub_path)
-        tokenization_info = bert_module(signature="tokenization_info", as_dict=True)
-        vocab_file, do_lower_case = self.sess.run(
-            [
-                tokenization_info["vocab_file"],
-                tokenization_info["do_lower_case"],
-            ]
-        )
-        self.tokenizer = FullTokenizer(vocab_file=vocab_file, do_lower_case=do_lower_case, spm_model_file=vocab_file)
+        module_layer = hub.KerasLayer(self.bert_model_hub_path, trainable=False)
+        if is_bert:
+            vocab_file = module_layer.resolved_object.vocab_file.asset_path.numpy()
+            do_lower_case = module_layer.resolved_object.do_lower_case.numpy()
+            self.tokenizer = bert_tokenizer(vocab_file, do_lower_case)
+        else:
+            sp_model_file = module_layer.resolved_object.sp_model_file.asset_path.numpy()
+            self.tokenizer = albert_tokenizer(vocab_file=sp_model_file,
+                                           do_lower_case=True,
+                                           spm_model_file=sp_model_file)
+        del module_layer
 
     def tokenize(self, text: str):
         words = text.split()  # whitespace tokenizer
@@ -128,7 +131,7 @@ class TagsVectorizer:
 class AlbertLayer(tf.keras.layers.Layer):
 
     def __init__(self, fine_tune=True, pooling='first',
-                 albert_path="https://tfhub.dev/google/albert_base/1", **kwargs):
+                 albert_path="https://tfhub.dev/google/albert_base/2", **kwargs):
         self.fine_tune = fine_tune
         self.output_size = 768
         self.pooling = pooling
@@ -195,11 +198,13 @@ class AlbertLayer(tf.keras.layers.Layer):
 
 class JointBertModel(Model):
 
-    def __init__(self, slots_num, intents_num, bert_hub_path, sess, num_bert_fine_tune_layers=1):
+    def __init__(self, slots_num, intents_num, bert_hub_path,
+                 num_bert_fine_tune_layers=1, is_bert=False):
         self.slots_num = slots_num
         self.intents_num = intents_num
         self.bert_hub_path = bert_hub_path
         self.num_bert_fine_tune_layers = num_bert_fine_tune_layers
+        self.is_bert = is_bert
 
         self.model_params = {
             'slots_num': slots_num,
@@ -210,7 +215,6 @@ class JointBertModel(Model):
 
         self.build_model()
         self.compile_model()
-        self.initialize_vars(sess)
 
     def compile_model(self):
         optimizer = tf.keras.optimizers.Adam(lr=5e-5)
@@ -225,33 +229,37 @@ class JointBertModel(Model):
         self.summary()
 
     def build_model(self):
-        in_id = Input(shape=(None,), name='input_ids')
-        in_mask = Input(shape=(None,), name='input_masks')
-        in_segment = Input(shape=(None,), name='segment_ids')
+        in_id = Input(shape=(None,), name='input_word_ids', dtype=tf.int32)
+        in_mask = Input(shape=(None,), name='input_mask', dtype=tf.int32)
+        in_segment = Input(shape=(None,), name='input_type_ids', dtype=tf.int32)
         in_valid_positions = Input(shape=(None, self.slots_num), name='valid_positions')
-        bert_inputs = [in_id, in_mask, in_segment, in_valid_positions]
+        bert_inputs = [in_id, in_mask, in_segment]
+        inputs = bert_inputs + [in_valid_positions]
 
-        bert_pooled_output, bert_sequence_output = AlbertLayer(
-            fine_tune=True if self.num_bert_fine_tune_layers > 0 else False,
-            albert_path=self.bert_hub_path,
-            pooling='mean', name='AlbertLayer')(bert_inputs)
+        if self.is_bert:
+            name = 'BertLayer'
+        else:
+            name = 'AlbertLayer'
+        # bert_pooled_output, bert_sequence_output = hub.KerasLayer(
+        #     fine_tune=True if self.num_bert_fine_tune_layers > 0 else False,
+        #     albert_path=self.bert_hub_path,
+        #     pooling='mean', name='AlbertLayer')(bert_inputs)
+
+        bert_pooled_output, bert_sequence_output = hub.KerasLayer(self.bert_hub_path, trainable=True,
+                                                                  name=name)(bert_inputs)
 
         intents_fc = Dense(self.intents_num, activation='softmax', name='intent_classifier')(bert_pooled_output)
 
         slots_output = TimeDistributed(Dense(self.slots_num, activation='softmax'))(bert_sequence_output)
         slots_output = Multiply(name='slots_tagger')([slots_output, in_valid_positions])
 
-        super(JointBertModel, self).__init__(inputs=bert_inputs, outputs=[slots_output, intents_fc])
+        # super(JointBertModel, self).__init__(inputs=inputs, outputs=[slots_output, intents_fc])
+        self.model = Model(inputs=inputs, outputs=[slots_output, intents_fc])
 
     def prepare_valid_positions(self, in_valid_positions):
         in_valid_positions = np.expand_dims(in_valid_positions, axis=2)
         in_valid_positions = np.tile(in_valid_positions, (1, 1, self.slots_num))
         return in_valid_positions
-
-    def initialize_vars(self, sess):
-        sess.run(tf.compat.v1.local_variables_initializer())
-        sess.run(tf.compat.v1.global_variables_initializer())
-        tf.compat.v1.keras.backend.set_session(sess)
 
     def predict_slots_intent(self, x, slots_vectorizer, intent_vectorizer, remove_start_end=True,
                              include_intent_prob=False):
@@ -276,7 +284,7 @@ class JointBertModel(Model):
         self.save(os.path.join(model_path, 'joint_bert_model.h5'))
 
     @staticmethod
-    def load_model(load_folder_path, sess):
+    def load_model(load_folder_path):
         with open(os.path.join(load_folder_path, 'params.json'), 'r') as json_file:
             model_params = json.load(json_file)
 
@@ -285,7 +293,7 @@ class JointBertModel(Model):
         bert_hub_path = model_params['bert_hub_path']
         num_bert_fine_tune_layers = model_params['num_bert_fine_tune_layers']
 
-        model = JointBertModel(slots_num, intents_num, bert_hub_path, sess, num_bert_fine_tune_layers)
+        model = JointBertModel(slots_num, intents_num, bert_hub_path, num_bert_fine_tune_layers)
         model.load_weights(os.path.join(load_folder_path, 'joint_bert_model.h5'))
         return model
 
@@ -304,7 +312,7 @@ class JointBertModel(Model):
         return text_arr, tags_arr, labels
 
     @staticmethod
-    def train_model(train_config_path, sess):
+    def train_model(train_config_path, is_bert):
         logging.basicConfig(stream=sys.stdout, format='%(message)s', level=logging.WARNING)
         with open(os.path.join(train_config_path, 'train_config.json'), 'r') as json_file:
             train_config = json.load(json_file)
@@ -319,13 +327,12 @@ class JointBertModel(Model):
         text_arr, tags_arr, intents = JointBertModel.read_goo(data_folder_path)
 
         logging.log(logging.WARNING, 'Vectorize data ...')
-        bert_vectorizer = BERTVectorizer(sess, model_hub_path)
+        bert_vectorizer = BERTVectorizer(is_bert, model_hub_path)
         input_ids, input_mask, segment_ids, valid_positions, sequence_lengths = bert_vectorizer.transform(text_arr)
 
         logging.log(logging.WARNING, 'Vectorize tags ...')
         tags_vectorizer = TagsVectorizer()
         tags_vectorizer.fit(tags_arr)
-
         tags = tags_vectorizer.transform(tags_arr, valid_positions)
         slots_num = len(tags_vectorizer.label_encoder.classes_)
 
@@ -334,7 +341,8 @@ class JointBertModel(Model):
         intents = intents_label_encoder.fit_transform(intents).astype(np.int32)
         intents_num = len(intents_label_encoder.classes_)
 
-        model = JointBertModel(slots_num, intents_num, model_hub_path, sess, num_bert_fine_tune_layers)
+        model = JointBertModel(slots_num, intents_num, model_hub_path,
+                               num_bert_fine_tune_layers, is_bert=is_bert)
 
         logging.log(logging.WARNING, 'Training model ...')
         X = np.concatenate((input_ids, input_mask, segment_ids, valid_positions, tags), axis=1)
@@ -385,7 +393,7 @@ class JointBertModel(Model):
             pickle.dump(intents_label_encoder, handle, protocol=pickle.HIGHEST_PROTOCOL)
         return model
 
-    def evaluate_model(self, train_config_path, sess):
+    def evaluate_model(self, train_config_path, is_bert):
 
         def flatten(y):
             return list(chain.from_iterable(y))
@@ -396,7 +404,7 @@ class JointBertModel(Model):
         load_folder_path = train_config['save_folder_path']
         test_folder_path = os.path.join(train_config['data_folder_path'], 'test')
 
-        bert_vectorizer = BERTVectorizer(sess, model_hub_path)
+        bert_vectorizer = BERTVectorizer(is_bert, model_hub_path)
 
         logging.log(logging.WARNING, 'Loading model ...')
         if not os.path.exists(load_folder_path):

@@ -8,16 +8,16 @@ from src.JointBertModel import JointBertModel, BERTVectorizer, TagsVectorizer
 
 class ActionClassifier:
 
-    def __init__(self, load_folder_path, sess):
+    def __init__(self, load_folder_path):
         self.sess = tf.compat.v1.Session()
-        self.bert_vectorizer = BERTVectorizer(sess)
+        self.bert_vectorizer = BERTVectorizer()
         self.tags_vectorizer = TagsVectorizer()
         self.intents_label_encoder = LabelEncoder()
         with open(os.path.join(load_folder_path, 'tags_vectorizer.pkl'), 'rb') as handle:
             self.tags_vectorizer = pickle.load(handle)
         with open(os.path.join(load_folder_path, 'intents_label_encoder.pkl'), 'rb') as handle:
             self.intents_label_encoder = pickle.load(handle)
-        self.model = JointBertModel.load_model(load_folder_path, sess)
+        self.model = JointBertModel.load_model(load_folder_path)
 
     def make_prediction(self, utterance):
         intent_slots = self._predict(utterance)
