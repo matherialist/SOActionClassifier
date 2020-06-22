@@ -89,12 +89,6 @@ def preprocess_text(inputs, remove_space=True, lower=False):
     if remove_space:
         outputs = " ".join(inputs.strip().split())
 
-    if six.PY2 and isinstance(outputs, str):
-        try:
-            outputs = six.ensure_text(outputs, "utf-8")
-        except UnicodeDecodeError:
-            outputs = six.ensure_text(outputs, "latin-1")
-
     outputs = unicodedata.normalize("NFKD", outputs)
     outputs = "".join([c for c in outputs if not unicodedata.combining(c)])
     if lower:
@@ -105,9 +99,6 @@ def preprocess_text(inputs, remove_space=True, lower=False):
 
 def encode_pieces(sp_model, text, return_unicode=True, sample=False):
     """turn sentences into word pieces."""
-
-    if six.PY2 and isinstance(text, six.text_type):
-        text = six.ensure_binary(text, "utf-8")
 
     if not sample:
         pieces = sp_model.EncodeAsPieces(text)
@@ -129,15 +120,6 @@ def encode_pieces(sp_model, text, return_unicode=True, sample=False):
         else:
             new_pieces.append(piece)
 
-    # note(zhiliny): convert back to unicode for py2
-    if six.PY2 and return_unicode:
-        ret_pieces = []
-        for piece in new_pieces:
-            if isinstance(piece, str):
-                piece = six.ensure_text(piece, "utf-8")
-            ret_pieces.append(piece)
-        new_pieces = ret_pieces
-
     return new_pieces
 
 
@@ -156,13 +138,6 @@ def convert_to_unicode(text):
             return six.ensure_text(text, "utf-8", "ignore")
         else:
             raise ValueError("Unsupported string type: %s" % (type(text)))
-    elif six.PY2:
-        if isinstance(text, str):
-            return six.ensure_text(text, "utf-8", "ignore")
-        elif isinstance(text, six.text_type):
-            return text
-        else:
-            raise ValueError("Unsupported string type: %s" % (type(text)))
     else:
         raise ValueError("Not running on Python2 or Python 3?")
 
@@ -177,13 +152,6 @@ def printable_text(text):
             return text
         elif isinstance(text, bytes):
             return six.ensure_text(text, "utf-8", "ignore")
-        else:
-            raise ValueError("Unsupported string type: %s" % (type(text)))
-    elif six.PY2:
-        if isinstance(text, str):
-            return text
-        elif isinstance(text, six.text_type):
-            return six.ensure_binary(text, "utf-8")
         else:
             raise ValueError("Unsupported string type: %s" % (type(text)))
     else:

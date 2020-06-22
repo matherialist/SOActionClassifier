@@ -1,5 +1,3 @@
-import tensorflow as tf
-from tensorflow.python.keras.backend import set_session
 from os import path
 from flask import Flask, request
 from src.ActionClassifer import ActionClassifier
@@ -10,19 +8,14 @@ app = Flask(__name__)
 config_relative_path = 'files'
 config_path = path.join(path.dirname(__file__), config_relative_path)
 
-graph = tf.compat.v1.get_default_graph()
-sess = tf.compat.v1.Session()
-tf.compat.v1.keras.backend.set_session(sess)
-ac = ActionClassifier(config_path, sess)
+ac = ActionClassifier(config_path, model_hub_path="https://tfhub.dev/tensorflow/bert_multi_cased_L-12_H-768_A-12/2", is_bert=True)
 
 
 @app.route('/get-intent', methods=['POST'])
 def get_intent():
-    with graph.as_default():
-        set_session(sess)
-        data = request.get_json()
-        address = request.remote_addr
-        result = ac.make_prediction(data['text'])
+    data = request.get_json()
+    address = request.remote_addr
+    result = ac.make_prediction(data['text'])
         # if result['command']['device'] == 'timer':
         #     tr = TimerReminder()
         #     tr.set_timer(result['command']['value'], address)
