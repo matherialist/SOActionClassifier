@@ -59,7 +59,7 @@ class BERTVectorizer:
         segment_ids = []
         valid_positions = []
         for text in text_arr:
-            ids, mask, seg_ids, valid_pos = self.__vectorize(text)
+            ids, mask, seg_ids, valid_pos = self._vectorize(text)
             input_ids.append(ids)
             input_mask.append(mask)
             segment_ids.append(seg_ids)
@@ -72,7 +72,7 @@ class BERTVectorizer:
         valid_positions = tf.keras.preprocessing.sequence.pad_sequences(valid_positions, padding='post')
         return input_ids, input_mask, segment_ids, valid_positions, sequence_lengths
 
-    def __vectorize(self, text: str):
+    def _vectorize(self, text: str):
         tokens, valid_positions = self.tokenize(text)
         tokens.insert(0, '[CLS]')
         valid_positions.insert(0, 1)

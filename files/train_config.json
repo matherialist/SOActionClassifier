@@ -1,5 +1,5 @@
 {
-  "data_folder_path": "data",
+  "data_folder_path": "data/ru",
   "save_folder_path": "files",
   "epochs": 5,
   "batch_size": 128,
